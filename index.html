@@ -17,6 +17,7 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial;
+scroll-behavior:smooth;
 }
 
 body{
@@ -27,7 +28,7 @@ background:#f5f5f5;
 
 header{
 background:#000;
-padding:15px;
+padding:15px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -38,13 +39,14 @@ z-index:1000;
 
 .logo{
 color:white;
-font-size:22px;
+font-size:24px;
 font-weight:bold;
 }
 
 .menu{
 display:flex;
 gap:10px;
+flex-wrap:wrap;
 }
 
 .menu a{
@@ -54,38 +56,40 @@ background:#ff9800;
 padding:10px 15px;
 border-radius:10px;
 font-size:14px;
+font-weight:bold;
 }
 
 /* HERO */
 
 .hero{
-height:500px;
+height:550px;
 background:url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200');
 background-size:cover;
 background-position:center;
 display:flex;
 justify-content:center;
 align-items:center;
-text-align:center;
 padding:20px;
+text-align:center;
 }
 
 .hero-box{
-background:rgba(0,0,0,0.7);
-padding:30px;
+background:rgba(0,0,0,0.75);
+padding:35px;
 border-radius:20px;
 color:white;
-max-width:500px;
+max-width:550px;
 }
 
 .hero-box h1{
-font-size:35px;
-margin-bottom:15px;
+font-size:40px;
+margin-bottom:20px;
 }
 
 .hero-box p{
 font-size:18px;
-margin-bottom:20px;
+margin-bottom:25px;
+line-height:1.6;
 }
 
 .hero-box button{
@@ -96,22 +100,45 @@ color:white;
 font-size:18px;
 border-radius:10px;
 cursor:pointer;
+font-weight:bold;
 }
 
-/* SECCIONES */
+/* TITULOS */
 
 .section-title{
 text-align:center;
-font-size:30px;
-margin-top:50px;
-margin-bottom:30px;
+font-size:32px;
+margin-top:60px;
+margin-bottom:35px;
+color:#111;
+}
+
+/* BENEFICIOS */
+
+.beneficios{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:20px;
+}
+
+.beneficio{
+background:white;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.beneficio h3{
+margin-bottom:15px;
 }
 
 /* PRODUCTOS */
 
 .productos{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
 padding:20px;
 }
@@ -126,7 +153,7 @@ text-align:center;
 
 .producto img{
 width:100%;
-height:160px;
+height:170px;
 object-fit:cover;
 border-radius:15px;
 margin-bottom:15px;
@@ -138,6 +165,7 @@ margin-bottom:10px;
 
 .producto p{
 margin-bottom:10px;
+font-size:16px;
 }
 
 .producto button{
@@ -149,23 +177,29 @@ color:white;
 font-size:16px;
 border-radius:10px;
 cursor:pointer;
+font-weight:bold;
 }
 
-/* BENEFICIOS */
+/* APK */
 
-.beneficios{
-padding:20px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.beneficio{
-background:white;
-padding:20px;
-border-radius:20px;
+.apk{
+background:#111;
+color:white;
+padding:60px 20px;
 text-align:center;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+margin-top:50px;
+}
+
+.apk a{
+display:inline-block;
+margin-top:20px;
+padding:15px 25px;
+background:#2196f3;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
 }
 
 /* SOPORTE */
@@ -173,9 +207,8 @@ box-shadow:0 0 10px rgba(0,0,0,0.1);
 .soporte{
 background:#000;
 color:white;
-padding:50px 20px;
+padding:60px 20px;
 text-align:center;
-margin-top:50px;
 }
 
 .soporte a{
@@ -187,6 +220,7 @@ color:white;
 text-decoration:none;
 border-radius:10px;
 font-size:18px;
+font-weight:bold;
 }
 
 /* FOOTER */
@@ -195,8 +229,11 @@ footer{
 background:#111;
 color:white;
 text-align:center;
-padding:20px;
-margin-top:40px;
+padding:25px;
+}
+
+footer p{
+margin-top:10px;
 }
 
 </style>
@@ -223,8 +260,12 @@ Registro
 Ingresar
 </a>
 
-<a href="#">
-Descargar APK
+<a href="#productos">
+Planes
+</a>
+
+<a href="#soporte">
+Soporte
 </a>
 
 </div>
@@ -238,15 +279,18 @@ Descargar APK
 <div class="hero-box">
 
 <h1>
-Gana Dinero con NOVATECH
+Invierte y Genera Ganancias Diarias
 </h1>
 
 <p>
-Invierte y genera un 8% diario en cada plan.
+Únete a NOVATECH CLUB y gana un 8% diario
+en cada uno de nuestros planes de inversión.
 </p>
 
 <button onclick="window.location='registro.html'">
-Comenzar
+
+Crear Cuenta
+
 </button>
 
 </div>
@@ -256,7 +300,7 @@ Comenzar
 <!-- BENEFICIOS -->
 
 <h2 class="section-title">
-¿Por qué elegirnos?
+¿Por qué elegir NOVATECH?
 </h2>
 
 <section class="beneficios">
@@ -264,11 +308,11 @@ Comenzar
 <div class="beneficio">
 
 <h3>
-Ganancias Diarias
+8% Diario
 </h3>
 
 <p>
-Obtén un 8% diario en todos los planes.
+Genera ganancias diarias automáticamente.
 </p>
 
 </div>
@@ -280,7 +324,7 @@ Retiros Seguros
 </h3>
 
 <p>
-Retiro mínimo DOP 250.
+Retiro mínimo de DOP 250.
 </p>
 
 </div>
@@ -288,11 +332,11 @@ Retiro mínimo DOP 250.
 <div class="beneficio">
 
 <h3>
-Soporte WhatsApp
+Soporte Real
 </h3>
 
 <p>
-Atención rápida y personalizada.
+Atención personalizada por WhatsApp.
 </p>
 
 </div>
@@ -301,7 +345,7 @@ Atención rápida y personalizada.
 
 <!-- PRODUCTOS -->
 
-<h2 class="section-title">
+<h2 class="section-title" id="productos">
 Planes de Inversión
 </h2>
 
@@ -316,13 +360,11 @@ PLAN START
 </h2>
 
 <p>
-Inversión:
-DOP 1,000
+Inversión: DOP 1,000
 </p>
 
 <p>
-Ganancia diaria:
-8%
+Ganancia diaria: 8%
 </p>
 
 <button onclick="comprar('PLAN START',1000)">
@@ -340,13 +382,11 @@ PLAN PLUS
 </h2>
 
 <p>
-Inversión:
-DOP 2,000
+Inversión: DOP 2,000
 </p>
 
 <p>
-Ganancia diaria:
-8%
+Ganancia diaria: 8%
 </p>
 
 <button onclick="comprar('PLAN PLUS',2000)">
@@ -364,13 +404,11 @@ PLAN PRO
 </h2>
 
 <p>
-Inversión:
-DOP 3,000
+Inversión: DOP 3,000
 </p>
 
 <p>
-Ganancia diaria:
-8%
+Ganancia diaria: 8%
 </p>
 
 <button onclick="comprar('PLAN PRO',3000)">
@@ -388,13 +426,11 @@ PLAN VIP
 </h2>
 
 <p>
-Inversión:
-DOP 4,000
+Inversión: DOP 4,000
 </p>
 
 <p>
-Ganancia diaria:
-8%
+Ganancia diaria: 8%
 </p>
 
 <button onclick="comprar('PLAN VIP',4000)">
@@ -412,13 +448,11 @@ PLAN PREMIUM
 </h2>
 
 <p>
-Inversión:
-DOP 6,000
+Inversión: DOP 6,000
 </p>
 
 <p>
-Ganancia diaria:
-8%
+Ganancia diaria: 8%
 </p>
 
 <button onclick="comprar('PLAN PREMIUM',6000)">
@@ -436,13 +470,11 @@ PLAN ULTRA
 </h2>
 
 <p>
-Inversión:
-DOP 8,000
+Inversión: DOP 8,000
 </p>
 
 <p>
-Ganancia diaria:
-8%
+Ganancia diaria: 8%
 </p>
 
 <button onclick="comprar('PLAN ULTRA',8000)">
@@ -453,22 +485,42 @@ Comprar
 
 </section>
 
-<!-- SOPORTE -->
+<!-- APK -->
 
-<section class="soporte">
+<section class="apk">
 
 <h2>
-Soporte Oficial
+Descargar Aplicación
+</h2>
+
+<p>
+Próximamente disponible para Android APK.
+</p>
+
+<a href="#">
+
+Descargar APK
+
+</a>
+
+</section>
+
+<!-- SOPORTE -->
+
+<section class="soporte" id="soporte">
+
+<h2>
+Soporte Oficial WhatsApp
 </h2>
 
 <p>
 Si tienes problemas con tu cuenta o depósitos,
-contáctanos directamente.
+escríbenos directamente.
 </p>
 
 <a href="https://wa.me/18298177882">
 
-WhatsApp Soporte
+WhatsApp 829-817-7882
 
 </a>
 
@@ -483,11 +535,15 @@ WhatsApp Soporte
 </p>
 
 <p>
-Retiro mínimo: DOP 250
+Ganancia diaria 8%
 </p>
 
 <p>
-Comisión retiro: 8%
+Retiro mínimo DOP 250
+</p>
+
+<p>
+Comisión retiro 8%
 </p>
 
 </footer>
@@ -500,11 +556,12 @@ localStorage.setItem("plan",plan);
 
 localStorage.setItem("monto",monto);
 
-window.location="login.html";
+window.location="registro.html";
 
 }
 
 </script>
 
 </body>
+
 </html>
