@@ -4,118 +4,199 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>NOVATECH CLUB</title>
 
 <style>
 
-body{
+*{
 margin:0;
 padding:0;
+box-sizing:border-box;
 font-family:Arial;
+}
+
+body{
 background:#f5f5f5;
 }
 
+/* HEADER */
+
 header{
 background:#000;
-color:white;
 padding:15px;
-text-align:center;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-.banner{
-width:100%;
-height:220px;
-object-fit:cover;
+.logo{
+color:white;
+font-size:22px;
+font-weight:bold;
 }
 
-.top-buttons{
+.menu{
+display:flex;
+gap:10px;
+}
+
+.menu a{
+text-decoration:none;
+color:white;
+background:#ff9800;
+padding:10px 15px;
+border-radius:10px;
+font-size:14px;
+}
+
+/* HERO */
+
+.hero{
+height:500px;
+background:url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200');
+background-size:cover;
+background-position:center;
 display:flex;
 justify-content:center;
-gap:10px;
-padding:15px;
-flex-wrap:wrap;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
-.top-buttons button{
-padding:10px 15px;
-border:none;
-background:#ff9800;
+.hero-box{
+background:rgba(0,0,0,0.7);
+padding:30px;
+border-radius:20px;
 color:white;
+max-width:500px;
+}
+
+.hero-box h1{
+font-size:35px;
+margin-bottom:15px;
+}
+
+.hero-box p{
+font-size:18px;
+margin-bottom:20px;
+}
+
+.hero-box button{
+padding:15px 25px;
+border:none;
+background:#28a745;
+color:white;
+font-size:18px;
 border-radius:10px;
-font-weight:bold;
 cursor:pointer;
 }
 
+/* SECCIONES */
+
+.section-title{
+text-align:center;
+font-size:30px;
+margin-top:50px;
+margin-bottom:30px;
+}
+
+/* PRODUCTOS */
+
 .productos{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
-padding:15px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:20px;
 }
 
 .producto{
 background:white;
-padding:10px;
-border-radius:15px;
+border-radius:20px;
+padding:20px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 text-align:center;
 }
 
 .producto img{
 width:100%;
-height:120px;
+height:160px;
 object-fit:cover;
-border-radius:10px;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+.producto h2{
+margin-bottom:10px;
+}
+
+.producto p{
+margin-bottom:10px;
 }
 
 .producto button{
 width:100%;
-padding:10px;
-background:#28a745;
-border:none;
-color:white;
-font-size:16px;
-border-radius:10px;
-margin-top:10px;
-cursor:pointer;
-}
-
-.info{
-background:white;
-margin:15px;
-padding:15px;
-border-radius:15px;
-display:none;
-}
-
-.info input{
-width:100%;
-padding:10px;
-margin-top:10px;
-margin-bottom:10px;
-border-radius:10px;
-border:1px solid #ccc;
-}
-
-.info button{
-width:100%;
 padding:12px;
-background:#2196f3;
 border:none;
+background:#28a745;
 color:white;
 font-size:16px;
 border-radius:10px;
 cursor:pointer;
 }
 
-footer{
+/* BENEFICIOS */
+
+.beneficios{
+padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.beneficio{
+background:white;
+padding:20px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+/* SOPORTE */
+
+.soporte{
 background:#000;
 color:white;
+padding:50px 20px;
 text-align:center;
-padding:15px;
+margin-top:50px;
+}
+
+.soporte a{
+display:inline-block;
 margin-top:20px;
+padding:15px 25px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-size:18px;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
 }
 
 </style>
@@ -124,46 +205,125 @@ margin-top:20px;
 
 <body>
 
+<!-- HEADER -->
+
 <header>
 
-<h1>NOVATECH CLUB</h1>
+<div class="logo">
+NOVATECH CLUB
+</div>
+
+<div class="menu">
+
+<a href="registro.html">
+Registro
+</a>
+
+<a href="login.html">
+Ingresar
+</a>
+
+<a href="#">
+Descargar APK
+</a>
+
+</div>
 
 </header>
 
-<img class="banner"
-src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200">
+<!-- HERO -->
 
-<div class="top-buttons">
+<section class="hero">
 
-<button onclick="window.location.href='login.html'">
-Ingresar
-</button>
+<div class="hero-box">
 
-<button onclick="window.location.href='registro.html'">
-Registro
-</button>
+<h1>
+Gana Dinero con NOVATECH
+</h1>
 
-<button onclick="window.location.href='https://wa.me/18090000000'">
-Soporte
-</button>
+<p>
+Invierte y genera un 8% diario en cada plan.
+</p>
 
-<button>
-Descargar APK
+<button onclick="window.location='registro.html'">
+Comenzar
 </button>
 
 </div>
+
+</section>
+
+<!-- BENEFICIOS -->
+
+<h2 class="section-title">
+¿Por qué elegirnos?
+</h2>
+
+<section class="beneficios">
+
+<div class="beneficio">
+
+<h3>
+Ganancias Diarias
+</h3>
+
+<p>
+Obtén un 8% diario en todos los planes.
+</p>
+
+</div>
+
+<div class="beneficio">
+
+<h3>
+Retiros Seguros
+</h3>
+
+<p>
+Retiro mínimo DOP 250.
+</p>
+
+</div>
+
+<div class="beneficio">
+
+<h3>
+Soporte WhatsApp
+</h3>
+
+<p>
+Atención rápida y personalizada.
+</p>
+
+</div>
+
+</section>
+
+<!-- PRODUCTOS -->
+
+<h2 class="section-title">
+Planes de Inversión
+</h2>
 
 <section class="productos">
 
 <div class="producto">
 
-<h2>PLAN START</h2>
-
 <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000">
 
-<p>Ganancia diaria 8%</p>
+<h2>
+PLAN START
+</h2>
 
-<h3>DOP 1,000</h3>
+<p>
+Inversión:
+DOP 1,000
+</p>
+
+<p>
+Ganancia diaria:
+8%
+</p>
 
 <button onclick="comprar('PLAN START',1000)">
 Comprar
@@ -173,13 +333,21 @@ Comprar
 
 <div class="producto">
 
-<h2>PLAN PLUS</h2>
-
 <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000">
 
-<p>Ganancia diaria 8%</p>
+<h2>
+PLAN PLUS
+</h2>
 
-<h3>DOP 2,000</h3>
+<p>
+Inversión:
+DOP 2,000
+</p>
+
+<p>
+Ganancia diaria:
+8%
+</p>
 
 <button onclick="comprar('PLAN PLUS',2000)">
 Comprar
@@ -189,13 +357,21 @@ Comprar
 
 <div class="producto">
 
-<h2>PLAN PRO</h2>
-
 <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000">
 
-<p>Ganancia diaria 8%</p>
+<h2>
+PLAN PRO
+</h2>
 
-<h3>DOP 3,000</h3>
+<p>
+Inversión:
+DOP 3,000
+</p>
+
+<p>
+Ganancia diaria:
+8%
+</p>
 
 <button onclick="comprar('PLAN PRO',3000)">
 Comprar
@@ -205,13 +381,21 @@ Comprar
 
 <div class="producto">
 
-<h2>PLAN VIP</h2>
-
 <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000">
 
-<p>Ganancia diaria 8%</p>
+<h2>
+PLAN VIP
+</h2>
 
-<h3>DOP 4,000</h3>
+<p>
+Inversión:
+DOP 4,000
+</p>
+
+<p>
+Ganancia diaria:
+8%
+</p>
 
 <button onclick="comprar('PLAN VIP',4000)">
 Comprar
@@ -221,13 +405,21 @@ Comprar
 
 <div class="producto">
 
-<h2>PLAN PREMIUM</h2>
-
 <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1000">
 
-<p>Ganancia diaria 8%</p>
+<h2>
+PLAN PREMIUM
+</h2>
 
-<h3>DOP 6,000</h3>
+<p>
+Inversión:
+DOP 6,000
+</p>
+
+<p>
+Ganancia diaria:
+8%
+</p>
 
 <button onclick="comprar('PLAN PREMIUM',6000)">
 Comprar
@@ -237,13 +429,21 @@ Comprar
 
 <div class="producto">
 
-<h2>PLAN ULTRA</h2>
-
 <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1000">
 
-<p>Ganancia diaria 8%</p>
+<h2>
+PLAN ULTRA
+</h2>
 
-<h3>DOP 8,000</h3>
+<p>
+Inversión:
+DOP 8,000
+</p>
+
+<p>
+Ganancia diaria:
+8%
+</p>
 
 <button onclick="comprar('PLAN ULTRA',8000)">
 Comprar
@@ -253,109 +453,54 @@ Comprar
 
 </section>
 
-<div class="info" id="infoPago">
+<!-- SOPORTE -->
 
-<h2 id="tituloPlan"></h2>
+<section class="soporte">
+
+<h2>
+Soporte Oficial
+</h2>
 
 <p>
-Envía el pago a:
+Si tienes problemas con tu cuenta o depósitos,
+contáctanos directamente.
 </p>
 
-<p>
+<a href="https://wa.me/18298177882">
 
-<b>Banco Banreservas</b>
+WhatsApp Soporte
 
-<br><br>
+</a>
 
-Nombre:
-Welinson Batista Tejeda
+</section>
 
-<br><br>
-
-Cuenta:
-9606810364
-
-</p>
-
-<input type="text"
-id="nombreUsuario"
-placeholder="Tu nombre">
-
-<input type="file"
-id="comprobante">
-
-<button onclick="enviarComprobante()">
-Enviar comprobante
-</button>
-
-</div>
+<!-- FOOTER -->
 
 <footer>
 
 <p>
-✔ Ganancia diaria 8%
-</p>
-
-<p>
-✔ Retiro mínimo DOP 250
-</p>
-
-<p>
-✔ Comisión retiro 8%
-</p>
-
-<p>
 © NOVATECH CLUB
+</p>
+
+<p>
+Retiro mínimo: DOP 250
+</p>
+
+<p>
+Comisión retiro: 8%
 </p>
 
 </footer>
 
 <script>
 
-let planSeleccionado = "";
-let montoSeleccionado = 0;
-
 function comprar(plan,monto){
 
-planSeleccionado = plan;
-montoSeleccionado = monto;
+localStorage.setItem("plan",plan);
 
-document.getElementById("infoPago").style.display = "block";
+localStorage.setItem("monto",monto);
 
-document.getElementById("tituloPlan").innerHTML =
-"Comprar " + plan + " - DOP " + monto;
-
-window.scrollTo({
-top:document.body.scrollHeight,
-behavior:"smooth"
-});
-
-}
-
-function enviarComprobante(){
-
-let nombre =
-document.getElementById("nombreUsuario").value;
-
-let archivo =
-document.getElementById("comprobante").files[0];
-
-if(nombre == ""){
-alert("Escribe tu nombre");
-return;
-}
-
-if(!archivo){
-alert("Sube el comprobante");
-return;
-}
-
-alert(
-"Comprobante enviado correctamente.\n\n" +
-"Plan: " + planSeleccionado +
-"\nMonto: DOP " + montoSeleccionado +
-"\nUsuario: " + nombre
-);
+window.location="login.html";
 
 }
 
