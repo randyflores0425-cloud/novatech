@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>Registro</title>
 
 <style>
@@ -26,6 +31,11 @@ max-width:400px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
+h1{
+text-align:center;
+margin-bottom:20px;
+}
+
 input{
 width:100%;
 padding:14px;
@@ -46,6 +56,13 @@ border-radius:10px;
 cursor:pointer;
 }
 
+a{
+display:block;
+text-align:center;
+margin-top:15px;
+text-decoration:none;
+}
+
 </style>
 
 </head>
@@ -56,15 +73,35 @@ cursor:pointer;
 
 <h1>Crear Cuenta</h1>
 
-<input type="text" id="nombre" placeholder="Nombre">
+<input
+type="text"
+id="nombre"
+placeholder="Nombre completo"
+>
 
-<input type="email" id="email" placeholder="Correo">
+<input
+type="email"
+id="email"
+placeholder="Correo electrónico"
+>
 
-<input type="password" id="password" placeholder="Contraseña">
+<input
+type="password"
+id="password"
+placeholder="Contraseña"
+>
 
-<button onclick="registro()">
+<button id="btnRegistro">
+
 Registrarse
+
 </button>
+
+<a href="login.html">
+
+Ya tengo cuenta
+
+</a>
 
 </div>
 
@@ -109,13 +146,18 @@ appId: "1:1050314267105:web:852be575be54696e911aa0"
 
 };
 
-const app = initializeApp(firebaseConfig);
+const app =
+initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
+const auth =
+getAuth(app);
 
-const db = getFirestore(app);
+const db =
+getFirestore(app);
 
-window.registro = async function(){
+document
+.getElementById("btnRegistro")
+.addEventListener("click", async()=>{
 
 const nombre =
 document.getElementById("nombre").value;
@@ -126,34 +168,58 @@ document.getElementById("email").value;
 const password =
 document.getElementById("password").value;
 
+if(
+nombre=="" ||
+email=="" ||
+password==""
+){
+
+alert("Completa todos los campos");
+
+return;
+
+}
+
 try{
 
 const userCredential =
 
 await createUserWithEmailAndPassword(
+
 auth,
 email,
 password
+
 );
 
-const user = userCredential.user;
+const user =
+userCredential.user;
 
 await setDoc(
 
 doc(db,"usuarios",user.uid),
 
 {
+
 nombre:nombre,
+
 email:email,
+
 saldo:0,
+
 plan:"Sin plan",
+
 ganancias:0,
-referidos:0
+
+referidos:0,
+
+fecha:Date.now()
+
 }
 
 );
 
-alert("Cuenta creada");
+alert("Cuenta creada correctamente");
 
 window.location.href =
 "login.html";
@@ -166,9 +232,10 @@ alert(error.message);
 
 }
 
-}
+});
 
 </script>
 
 </body>
+
 </html>

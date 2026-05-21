@@ -12,11 +12,21 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
-body{
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial;
+}
+
+body{
 background:#f5f5f5;
 padding:20px;
-margin:0;
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
 }
 
 .plan{
@@ -27,7 +37,29 @@ margin-bottom:20px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
+.plan h2{
+margin-bottom:15px;
+}
+
+.plan p{
+margin-bottom:10px;
+font-size:16px;
+}
+
+input,select{
+
+width:100%;
+padding:14px;
+margin-top:10px;
+margin-bottom:15px;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:15px;
+
+}
+
 button{
+
 width:100%;
 padding:14px;
 background:#28a745;
@@ -36,17 +68,12 @@ color:white;
 font-size:16px;
 border-radius:10px;
 cursor:pointer;
-margin-top:15px;
+font-weight:bold;
+
 }
 
-input,select{
-width:100%;
-padding:14px;
-margin-top:10px;
-margin-bottom:15px;
-border-radius:10px;
-border:1px solid #ccc;
-box-sizing:border-box;
+button:hover{
+background:#218838;
 }
 
 </style>
@@ -59,28 +86,37 @@ box-sizing:border-box;
 
 <div class="plan">
 
-<h2>Cuenta de Pago</h2>
+<h2>
+Datos de Pago
+</h2>
 
 <p>
-Banco: Banreservas
+<strong>Banco:</strong>
+Banreservas
 </p>
 
 <p>
-Cuenta: 123456789
+<strong>Cuenta:</strong>
+9606810364
 </p>
 
 <p>
-Titular: NOVATECH CLUB
+<strong>Titular:</strong>
+Welinson Batista Tejeda
 </p>
 
 </div>
 
 <div class="plan">
 
+<h2>
+Enviar Comprobante
+</h2>
+
 <input
 type="text"
 id="nombre"
-placeholder="Tu nombre"
+placeholder="Tu nombre completo"
 >
 
 <select id="plan">
@@ -104,7 +140,7 @@ type="file"
 id="comprobante"
 >
 
-<button onclick="enviar()">
+<button id="btnEnviar">
 
 Enviar Comprobante
 
@@ -150,8 +186,9 @@ initializeApp(firebaseConfig);
 const db =
 getFirestore(app);
 
-window.enviar =
-async function(){
+document
+.getElementById("btnEnviar")
+.addEventListener("click", async()=>{
 
 const nombre =
 document.getElementById("nombre").value;
@@ -159,24 +196,48 @@ document.getElementById("nombre").value;
 const plan =
 document.getElementById("plan").value;
 
+if(nombre==""){
+
+alert("Ingresa tu nombre");
+
+return;
+
+}
+
+try{
+
 await addDoc(
 
 collection(db,"depositos"),
 
 {
+
 nombre:nombre,
+
 plan:plan,
+
 estado:"pendiente",
+
 fecha:Date.now()
+
 }
 
 );
 
 alert(
-"Comprobante enviado"
+"Comprobante enviado correctamente"
 );
 
+document.getElementById("nombre").value="";
+
 }
+catch(error){
+
+alert(error.message);
+
+}
+
+});
 
 </script>
 
