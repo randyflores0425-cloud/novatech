@@ -24,8 +24,6 @@ body{
 background:#f5f5f5;
 }
 
-/* HEADER */
-
 header{
 background:#000;
 padding:15px 20px;
@@ -58,8 +56,6 @@ border-radius:10px;
 font-size:14px;
 font-weight:bold;
 }
-
-/* HERO */
 
 .hero{
 height:550px;
@@ -103,8 +99,6 @@ cursor:pointer;
 font-weight:bold;
 }
 
-/* TITULOS */
-
 .section-title{
 text-align:center;
 font-size:32px;
@@ -112,25 +106,6 @@ margin-top:60px;
 margin-bottom:35px;
 color:#111;
 }
-
-/* BENEFICIOS */
-
-.beneficios{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:20px;
-}
-
-.beneficio{
-background:white;
-padding:25px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-/* PRODUCTOS */
 
 .productos{
 display:grid;
@@ -155,15 +130,6 @@ border-radius:15px;
 margin-bottom:15px;
 }
 
-.producto h2{
-margin-bottom:10px;
-}
-
-.producto p{
-margin-bottom:10px;
-font-size:16px;
-}
-
 .producto button{
 width:100%;
 padding:12px;
@@ -176,35 +142,12 @@ cursor:pointer;
 font-weight:bold;
 }
 
-/* APK */
-
-.apk{
-background:#111;
-color:white;
-padding:60px 20px;
-text-align:center;
-margin-top:50px;
-}
-
-.apk a{
-display:inline-block;
-margin-top:20px;
-padding:15px 25px;
-background:#2196f3;
-color:white;
-text-decoration:none;
-border-radius:10px;
-font-size:18px;
-font-weight:bold;
-}
-
-/* SOPORTE */
-
 .soporte{
 background:#000;
 color:white;
 padding:60px 20px;
 text-align:center;
+margin-top:50px;
 }
 
 .soporte a{
@@ -219,17 +162,12 @@ font-size:18px;
 font-weight:bold;
 }
 
-/* FOOTER */
-
 footer{
 background:#111;
 color:white;
 text-align:center;
 padding:25px;
-}
-
-footer p{
-margin-top:10px;
+margin-top:40px;
 }
 
 </style>
@@ -237,8 +175,6 @@ margin-top:10px;
 </head>
 
 <body>
-
-<!-- HEADER -->
 
 <header>
 
@@ -268,18 +204,16 @@ Soporte
 
 </header>
 
-<!-- HERO -->
-
 <section class="hero">
 
 <div class="hero-box">
 
 <h1>
-Invierte y Genera Ganancias
+Invierte y Gana Dinero
 </h1>
 
 <p>
-Únete a NOVATECH CLUB y gana un 8% diario
+Genera ganancias diarias del 8%
 con nuestros planes de inversión.
 </p>
 
@@ -293,54 +227,6 @@ Crear Cuenta
 
 </section>
 
-<!-- BENEFICIOS -->
-
-<h2 class="section-title">
-¿Por qué elegirnos?
-</h2>
-
-<section class="beneficios">
-
-<div class="beneficio">
-
-<h3>
-Ganancias Diarias
-</h3>
-
-<p>
-Recibe un 8% diario en cada plan activo.
-</p>
-
-</div>
-
-<div class="beneficio">
-
-<h3>
-Retiros Seguros
-</h3>
-
-<p>
-Monto mínimo de retiro DOP 250.
-</p>
-
-</div>
-
-<div class="beneficio">
-
-<h3>
-Soporte WhatsApp
-</h3>
-
-<p>
-Atención rápida y personalizada.
-</p>
-
-</div>
-
-</section>
-
-<!-- PRODUCTOS -->
-
 <h2 class="section-title" id="productos">
 Planes de Inversión
 </h2>
@@ -353,9 +239,9 @@ Planes de Inversión
 
 <h2>PLAN START</h2>
 
-<p>Inversión: DOP 1,000</p>
+<p>DOP 1,000</p>
 
-<p>Ganancia diaria: 8%</p>
+<p>Ganancia diaria 8%</p>
 
 <button onclick="comprar('PLAN START',1000)">
 Comprar
@@ -369,9 +255,9 @@ Comprar
 
 <h2>PLAN PLUS</h2>
 
-<p>Inversión: DOP 2,000</p>
+<p>DOP 2,000</p>
 
-<p>Ganancia diaria: 8%</p>
+<p>Ganancia diaria 8%</p>
 
 <button onclick="comprar('PLAN PLUS',2000)">
 Comprar
@@ -385,9 +271,9 @@ Comprar
 
 <h2>PLAN PRO</h2>
 
-<p>Inversión: DOP 3,000</p>
+<p>DOP 3,000</p>
 
-<p>Ganancia diaria: 8%</p>
+<p>Ganancia diaria 8%</p>
 
 <button onclick="comprar('PLAN PRO',3000)">
 Comprar
@@ -401,9 +287,9 @@ Comprar
 
 <h2>PLAN VIP</h2>
 
-<p>Inversión: DOP 4,000</p>
+<p>DOP 4,000</p>
 
-<p>Ganancia diaria: 8%</p>
+<p>Ganancia diaria 8%</p>
 
 <button onclick="comprar('PLAN VIP',4000)">
 Comprar
@@ -417,9 +303,9 @@ Comprar
 
 <h2>PLAN PREMIUM</h2>
 
-<p>Inversión: DOP 6,000</p>
+<p>DOP 6,000</p>
 
-<p>Ganancia diaria: 8%</p>
+<p>Ganancia diaria 8%</p>
 
 <button onclick="comprar('PLAN PREMIUM',6000)">
 Comprar
@@ -433,9 +319,9 @@ Comprar
 
 <h2>PLAN ULTRA</h2>
 
-<p>Inversión: DOP 8,000</p>
+<p>DOP 8,000</p>
 
-<p>Ganancia diaria: 8%</p>
+<p>Ganancia diaria 8%</p>
 
 <button onclick="comprar('PLAN ULTRA',8000)">
 Comprar
@@ -445,37 +331,14 @@ Comprar
 
 </section>
 
-<!-- APK -->
-
-<section class="apk">
-
-<h2>
-Descargar Aplicación
-</h2>
-
-<p>
-Próximamente disponible APK Android.
-</p>
-
-<a href="#">
-
-Descargar APK
-
-</a>
-
-</section>
-
-<!-- SOPORTE -->
-
 <section class="soporte" id="soporte">
 
 <h2>
-Soporte Oficial
+Soporte WhatsApp
 </h2>
 
 <p>
-Si tienes problemas con tu cuenta,
-depósitos o retiros escríbenos.
+¿Problemas con depósitos o retiros?
 </p>
 
 <a href="https://wa.me/18298177882">
@@ -486,8 +349,6 @@ WhatsApp 829-817-7882
 
 </section>
 
-<!-- FOOTER -->
-
 <footer>
 
 <p>
@@ -495,15 +356,11 @@ WhatsApp 829-817-7882
 </p>
 
 <p>
-Ganancia diaria: 8%
+Retiro mínimo DOP 250
 </p>
 
 <p>
-Retiro mínimo: DOP 250
-</p>
-
-<p>
-Comisión retiro: 8%
+Comisión retiro 8%
 </p>
 
 </footer>
@@ -522,16 +379,8 @@ localStorage.setItem(
 monto
 );
 
-alert(
-"Seleccionaste " +
-plan +
-" por DOP " +
-monto +
-". Ahora debes registrarte o iniciar sesión."
-);
-
 window.location.href =
-"registro.html";
+"comprar.html";
 
 }
 

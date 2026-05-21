@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Comprar Plan</title>
+
+<style>
+
+body{
+margin:0;
+padding:20px;
+font-family:Arial;
+background:#f5f5f5;
+}
+
+.caja{
+max-width:500px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+.info{
+background:#f0f0f0;
+padding:15px;
+border-radius:15px;
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+border-radius:10px;
+border:1px solid #ccc;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:14px;
+background:#28a745;
+border:none;
+color:white;
+font-size:16px;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.whatsapp{
+display:block;
+text-align:center;
+margin-top:20px;
+background:#25D366;
+color:white;
+padding:15px;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="caja">
+
+<h1>
+Comprar Plan
+</h1>
+
+<div class="info">
+
+<h2 id="plan"></h2>
+
+<p id="monto"></p>
+
+<p>
+Banco:
+<b>Banreservas</b>
+</p>
+
+<p>
+Nombre:
+<b>Welinson Batista Tejeda</b>
+</p>
+
+<p>
+Cuenta:
+<b>9606810364</b>
+</p>
+
+</div>
+
+<input type="text"
+id="nombre"
+placeholder="Tu nombre completo">
+
+<input type="file"
+id="comprobante">
+
+<button onclick="enviarComprobante()">
+
+Enviar Comprobante
+
+</button>
+
+<a class="whatsapp"
+href="https://wa.me/18298177882">
+
+Soporte WhatsApp
+
+</a>
+
+</div>
+
+<script>
+
+const plan =
+localStorage.getItem(
+"planSeleccionado"
+);
+
+const monto =
+localStorage.getItem(
+"montoSeleccionado"
+);
+
+document.getElementById("plan").innerHTML =
+plan;
+
+document.getElementById("monto").innerHTML =
+"Monto: DOP " + monto;
+
+function enviarComprobante(){
+
+let nombre =
+document.getElementById("nombre").value;
+
+let archivo =
+document.getElementById("comprobante").files[0];
+
+if(nombre==""){
+
+alert("Escribe tu nombre");
+
+return;
+
+}
+
+if(!archivo){
+
+alert("Debes subir el comprobante");
+
+return;
+
+}
+
+alert(
+"Comprobante enviado correctamente.\n\n" +
+"Tu depósito será revisado."
+);
+
+window.location.href =
+"login.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
