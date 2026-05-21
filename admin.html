@@ -1,14 +1,351 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Panel Administrador</title>
+
+<!-- FIREBASE -->
+
+<script type="module">
+
+import { initializeApp }
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+
+getFirestore,
+collection,
+getDocs,
+doc,
+updateDoc
+
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+
+apiKey: "TU_APIKEY",
+
+authDomain: "TU_AUTHDOMAIN",
+
+projectId: "TU_PROJECTID",
+
+storageBucket: "TU_STORAGEBUCKET",
+
+messagingSenderId: "TU_MESSAGINGSENDERID",
+
+appId: "TU_APPID"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+async function cargarUsuarios(){
+
+const usuariosDiv =
+document.getElementById("usuarios");
+
+usuariosDiv.innerHTML =
+"";
+
+const querySnapshot =
+await getDocs(
+collection(db,"usuarios")
+);
+
+querySnapshot.forEach((docu)=>{
+
+const datos =
+docu.data();
+
+usuariosDiv.innerHTML += `
+
+<div class="card">
+
+<h2>${datos.nombre || "Usuario"}</h2>
+
+<p>
+Correo:
+${datos.email || ""}
+</p>
+
+<p>
+Saldo:
+DOP ${datos.saldo || 0}
+</p>
+
+<p>
+Plan:
+${datos.plan || "Ninguno"}
+</p>
+
+<p>
+Referidos:
+${datos.referidos || 0}
+</p>
+
+<input
+type="number"
+placeholder="Agregar saldo"
+id="saldo-${docu.id}"
+>
+
+<button
+onclick="agregarSaldo('${docu.id}')"
+>
+
+Agregar Saldo
+
+</button>
+
+<a
+class="whatsapp"
+href="https://wa.me/18298177882"
+>
+
+Contactar
+
+</a>
+
+</div>
+
+`;
+
+});
+
+}
+
+window.agregarSaldo =
+async function(id){
+
+const input =
+document.getElementById(
+"saldo-" + id
+);
+
+const monto =
+parseFloat(input.value);
+
+if(!monto){
+
+alert("Ingresa monto");
+
+return;
+
+}
+
+const usuarioRef =
+doc(db,"usuarios",id);
+
+await updateDoc(usuarioRef,{
+
+saldo:monto
+
+});
+
+alert("Saldo actualizado");
+
+cargarUsuarios();
+
+}
+
+cargarUsuarios();
+
+</script>
+
+<style>
+
+body{
+
+margin:0;
+padding:20px;
+font-family:Arial;
+background:#f5f5f5;
+
+}
+
+header{
+
+background:#000;
+color:white;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+text-align:center;
+
+}
+
+h1{
+
+margin:0;
+
+}
+
+.panel{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+
+}
+
+.card{
+
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+
+}
+
+.card h2{
+
+margin-top:0;
+
+}
+
+.card p{
+
+margin:10px 0;
+
+}
+
+input{
+
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:10px;
+border-radius:10px;
+border:1px solid #ccc;
+box-sizing:border-box;
+
+}
+
+button{
+
+width:100%;
+padding:12px;
+border:none;
+background:#28a745;
+color:white;
+font-size:16px;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+
+}
+
+.whatsapp{
+
+display:block;
+margin-top:15px;
+text-align:center;
+background:#25D366;
+padding:12px;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+
+}
+
+.topcards{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+margin-bottom:20px;
+
+}
+
+.topcard{
+
+background:white;
+padding:20px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+
+}
+
+</style>
+
 </head>
 
 <body>
-  
+
+<header>
+
+<h1>
+PANEL ADMINISTRADOR
+</h1>
+
+<p>
+NOVATECH CLUB
+</p>
+
+</header>
+
+<div class="topcards">
+
+<div class="topcard">
+
+<h2>
+Usuarios
+</h2>
+
+<p>
+Administración completa
+</p>
+
+</div>
+
+<div class="topcard">
+
+<h2>
+Depósitos
+</h2>
+
+<p>
+Aprobar comprobantes
+</p>
+
+</div>
+
+<div class="topcard">
+
+<h2>
+Retiros
+</h2>
+
+<p>
+Control manual
+</p>
+
+</div>
+
+</div>
+
+<div
+class="panel"
+id="usuarios"
+>
+
+</div>
+
 </body>
 
 </html>
