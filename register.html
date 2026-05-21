@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Registro</title>
 
 <style>
@@ -31,11 +26,6 @@ max-width:400px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
-h1{
-text-align:center;
-margin-bottom:20px;
-}
-
 input{
 width:100%;
 padding:14px;
@@ -56,13 +46,6 @@ border-radius:10px;
 cursor:pointer;
 }
 
-a{
-display:block;
-margin-top:15px;
-text-align:center;
-text-decoration:none;
-}
-
 </style>
 
 </head>
@@ -73,35 +56,15 @@ text-decoration:none;
 
 <h1>Crear Cuenta</h1>
 
-<input
-type="text"
-id="nombre"
-placeholder="Nombre completo"
->
+<input type="text" id="nombre" placeholder="Nombre">
 
-<input
-type="email"
-id="email"
-placeholder="Correo electrónico"
->
+<input type="email" id="email" placeholder="Correo">
 
-<input
-type="password"
-id="password"
-placeholder="Contraseña"
->
+<input type="password" id="password" placeholder="Contraseña">
 
 <button onclick="registro()">
-
 Registrarse
-
 </button>
-
-<a href="login.html">
-
-Ya tengo cuenta
-
-</a>
 
 </div>
 
@@ -163,60 +126,34 @@ document.getElementById("email").value;
 const password =
 document.getElementById("password").value;
 
-if(
-nombre=="" ||
-email=="" ||
-password==""
-){
-
-alert("Completa todos los campos");
-
-return;
-
-}
-
 try{
 
 const userCredential =
 
 await createUserWithEmailAndPassword(
-
 auth,
 email,
 password
-
 );
 
-const user =
-userCredential.user;
+const user = userCredential.user;
 
 await setDoc(
 
 doc(db,"usuarios",user.uid),
 
 {
-
 nombre:nombre,
-
 email:email,
-
 saldo:0,
-
 plan:"Sin plan",
-
-referidos:0,
-
 ganancias:0,
-
-retiros:0,
-
-fecha:Date.now()
-
+referidos:0
 }
 
 );
 
-alert("Cuenta creada correctamente");
+alert("Cuenta creada");
 
 window.location.href =
 "login.html";
@@ -234,5 +171,4 @@ alert(error.message);
 </script>
 
 </body>
-
 </html>
