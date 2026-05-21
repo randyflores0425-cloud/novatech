@@ -8,59 +8,92 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>Login</title>
+<title>Login - NOVATECH CLUB</title>
 
 <style>
 
-body{
+*{
 margin:0;
 padding:0;
+box-sizing:border-box;
 font-family:Arial;
-background:#111;
+}
+
+body{
+background:#f5f5f5;
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
+min-height:100vh;
+padding:20px;
 }
 
 .caja{
+
 background:white;
-padding:25px;
-width:90%;
-max-width:400px;
-border-radius:15px;
+padding:30px;
+border-radius:20px;
+width:100%;
+max-width:450px;
+box-shadow:0 0 15px rgba(0,0,0,0.1);
+
+}
+
+.logo{
+
+text-align:center;
+font-size:28px;
+font-weight:bold;
+margin-bottom:20px;
+color:#ff9800;
+
 }
 
 h1{
+
 text-align:center;
+margin-bottom:25px;
+
 }
 
 input{
+
 width:100%;
-padding:12px;
-margin-top:10px;
+padding:14px;
 margin-bottom:15px;
 border-radius:10px;
 border:1px solid #ccc;
-box-sizing:border-box;
+font-size:15px;
+
 }
 
 button{
+
 width:100%;
-padding:12px;
+padding:14px;
+background:#28a745;
 border:none;
-background:#ff9800;
 color:white;
 font-size:16px;
 border-radius:10px;
 cursor:pointer;
+font-weight:bold;
+
 }
 
-a{
-display:block;
+.link{
+
 text-align:center;
-margin-top:15px;
+margin-top:20px;
+
+}
+
+.link a{
+
 text-decoration:none;
+color:#2196f3;
+font-weight:bold;
+
 }
 
 </style>
@@ -71,76 +104,129 @@ text-decoration:none;
 
 <div class="caja">
 
-<h1>Ingresar</h1>
+<div class="logo">
+NOVATECH CLUB
+</div>
 
-<input type="email"
+<h1>
+Iniciar Sesión
+</h1>
+
+<input
+type="email"
 id="email"
-placeholder="Correo">
+placeholder="Correo electrónico"
+>
 
-<input type="password"
+<input
+type="password"
 id="password"
-placeholder="Contraseña">
+placeholder="Contraseña"
+>
 
 <button onclick="login()">
-Entrar
+
+Ingresar
+
 </button>
 
+<div class="link">
+
+¿No tienes cuenta?
+
 <a href="registro.html">
-Crear cuenta
+
+Registrarse
+
 </a>
+
+</div>
 
 </div>
 
 <script type="module">
 
 import { initializeApp }
+
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
+
 getAuth,
 signInWithEmailAndPassword
+
 }
+
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
 
 apiKey: "TU_APIKEY",
 
-authDomain: "TU_DOMINIO",
+authDomain: "TU_AUTHDOMAIN",
 
 projectId: "TU_PROJECTID",
 
-storageBucket: "TU_STORAGE",
+storageBucket: "TU_STORAGEBUCKET",
 
-messagingSenderId: "TU_SENDERID",
+messagingSenderId: "TU_MESSAGINGSENDERID",
 
 appId: "TU_APPID"
 
 };
 
-const app = initializeApp(firebaseConfig);
+const app =
+initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
+const auth =
+getAuth(app);
 
-window.login = async function(){
+window.login =
+async function(){
 
-let email =
-document.getElementById("email").value;
+const email =
+document.getElementById(
+"email"
+).value;
 
-let password =
-document.getElementById("password").value;
+const password =
+document.getElementById(
+"password"
+).value;
+
+if(
+email=="" ||
+password==""
+){
+
+alert(
+"Completa todos los campos"
+);
+
+return;
+
+}
 
 try{
 
 await signInWithEmailAndPassword(
+
 auth,
 email,
 password
+
 );
 
-window.location="panel.html";
+alert(
+"Bienvenido"
+);
 
-}catch(error){
+window.location.href =
+"panel.html";
+
+}
+
+catch(error){
 
 alert(error.message);
 
@@ -151,4 +237,5 @@ alert(error.message);
 </script>
 
 </body>
+
 </html>
