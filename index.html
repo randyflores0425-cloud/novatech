@@ -5,169 +5,163 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>NOVATECH CLUB</title>
 
+<link rel="stylesheet" href="style.css">
+
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-scroll-behavior:smooth;
-}
-
 body{
+
+margin:0;
+font-family:Arial;
 background:#f5f5f5;
+
 }
 
 header{
+
 background:#000;
-padding:15px 20px;
+color:white;
+padding:15px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 position:sticky;
 top:0;
-z-index:1000;
+
 }
 
-.logo{
+header h1{
+
+margin:0;
+
+}
+
+nav a{
+
 color:white;
-font-size:24px;
-font-weight:bold;
-}
-
-.menu{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-}
-
-.menu a{
 text-decoration:none;
-color:white;
-background:#ff9800;
-padding:10px 15px;
-border-radius:10px;
-font-size:14px;
-font-weight:bold;
+margin-left:15px;
+
 }
 
 .hero{
-height:550px;
-background:url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200');
-background-size:cover;
-background-position:center;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
+
 text-align:center;
+padding:40px 20px;
+background:white;
+
 }
 
-.hero-box{
-background:rgba(0,0,0,0.75);
-padding:35px;
+.banner{
+
+width:100%;
+max-width:1000px;
 border-radius:20px;
-color:white;
-max-width:550px;
+
 }
 
-.hero-box h1{
-font-size:40px;
-margin-bottom:20px;
+.hero h2{
+
+font-size:35px;
+margin-top:20px;
+
 }
 
-.hero-box p{
-font-size:18px;
-margin-bottom:25px;
-line-height:1.6;
+.botones{
+
+margin-top:20px;
+
 }
 
-.hero-box button{
-padding:15px 25px;
+.botones button{
+
+padding:14px 25px;
+margin:10px;
 border:none;
-background:#28a745;
-color:white;
-font-size:18px;
 border-radius:10px;
+background:#007bff;
+color:white;
+font-size:16px;
 cursor:pointer;
-font-weight:bold;
-}
 
-.section-title{
-text-align:center;
-font-size:32px;
-margin-top:60px;
-margin-bottom:35px;
-color:#111;
 }
 
 .productos{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
-padding:20px;
+padding:40px;
+
 }
 
 .producto{
+
 background:white;
-border-radius:20px;
 padding:20px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+border-radius:20px;
 text-align:center;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+
 }
 
 .producto img{
+
 width:100%;
-height:170px;
+height:180px;
 object-fit:cover;
 border-radius:15px;
-margin-bottom:15px;
+
+}
+
+.producto h3{
+
+margin-top:15px;
+
 }
 
 .producto button{
-width:100%;
-padding:12px;
+
+padding:12px 20px;
 border:none;
 background:#28a745;
+color:white;
+border-radius:10px;
+cursor:pointer;
+
+}
+
+#contacto{
+
+text-align:center;
+padding:40px;
+background:white;
+
+}
+
+#contacto button{
+
+padding:15px 25px;
+border:none;
+background:#25d366;
 color:white;
 font-size:16px;
 border-radius:10px;
 cursor:pointer;
-font-weight:bold;
-}
 
-.soporte{
-background:#000;
-color:white;
-padding:60px 20px;
-text-align:center;
-margin-top:50px;
-}
-
-.soporte a{
-display:inline-block;
-margin-top:20px;
-padding:15px 25px;
-background:#25D366;
-color:white;
-text-decoration:none;
-border-radius:10px;
-font-size:18px;
-font-weight:bold;
 }
 
 footer{
-background:#111;
+
+background:black;
 color:white;
 text-align:center;
-padding:25px;
-margin-top:40px;
+padding:20px;
+
 }
 
 </style>
@@ -178,74 +172,95 @@ margin-top:40px;
 
 <header>
 
-<div class="logo">
-NOVATECH CLUB
-</div>
+<h1>NOVATECH CLUB</h1>
 
-<div class="menu">
+<nav>
 
-<a href="registro.html">
-Registro
-</a>
+<a href="#inicio">Inicio</a>
 
-<a href="login.html">
-Ingresar
-</a>
+<a href="#planes">Planes</a>
 
-<a href="#productos">
-Planes
-</a>
+<a href="#contacto">Contacto</a>
 
-<a href="#soporte">
-Soporte
-</a>
-
-</div>
+</nav>
 
 </header>
 
-<section class="hero">
+<section id="inicio" class="hero">
 
-<div class="hero-box">
+<img src="banner-logo.png" class="banner">
 
-<h1>
-Invierte y Gana Dinero
-</h1>
+<h2>
+
+Bienvenido a NOVATECH CLUB
+
+</h2>
 
 <p>
-Genera ganancias diarias del 8%
-con nuestros planes de inversión.
+
+La mejor plataforma tecnológica premium.
+
 </p>
 
-<button onclick="window.location.href='registro.html'">
+<div class="botones">
 
-Crear Cuenta
+<a href="registro.html">
+
+<button>
+
+Registro
 
 </button>
+
+</a>
+
+<a href="login.html">
+
+<button>
+
+Ingresar
+
+</button>
+
+</a>
 
 </div>
 
 </section>
 
-<h2 class="section-title" id="productos">
-Planes de Inversión
+<section id="planes">
+
+<h2 style="text-align:center; margin-top:40px;">
+
+Nuestros Planes
+
 </h2>
 
-<section class="productos">
+<div class="productos">
 
 <div class="producto">
 
-<img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000">
 
-<h2>PLAN START</h2>
+<h3>PLAN START</h3>
 
-<p>DOP 1,000</p>
+<p>
 
-<p>Ganancia diaria 8%</p>
+Acceso básico premium
 
-<button onclick="comprar('PLAN START',1000)">
+</p>
+
+<h2>DOP 1,000</h2>
+
+<a href="comprar.html">
+
+<button>
+
 Comprar
+
 </button>
+
+</a>
 
 </div>
 
@@ -253,63 +268,25 @@ Comprar
 
 <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000">
 
-<h2>PLAN PLUS</h2>
+<h3>PLAN PLUS</h3>
 
-<p>DOP 2,000</p>
+<p>
 
-<p>Ganancia diaria 8%</p>
+Acceso avanzado
 
-<button onclick="comprar('PLAN PLUS',2000)">
+</p>
+
+<h2>DOP 2,000</h2>
+
+<a href="comprar.html">
+
+<button>
+
 Comprar
+
 </button>
 
-</div>
-
-<div class="producto">
-
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000">
-
-<h2>PLAN PRO</h2>
-
-<p>DOP 3,000</p>
-
-<p>Ganancia diaria 8%</p>
-
-<button onclick="comprar('PLAN PRO',3000)">
-Comprar
-</button>
-
-</div>
-
-<div class="producto">
-
-<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000">
-
-<h2>PLAN VIP</h2>
-
-<p>DOP 4,000</p>
-
-<p>Ganancia diaria 8%</p>
-
-<button onclick="comprar('PLAN VIP',4000)">
-Comprar
-</button>
-
-</div>
-
-<div class="producto">
-
-<img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1000">
-
-<h2>PLAN PREMIUM</h2>
-
-<p>DOP 6,000</p>
-
-<p>Ganancia diaria 8%</p>
-
-<button onclick="comprar('PLAN PREMIUM',6000)">
-Comprar
-</button>
+</a>
 
 </div>
 
@@ -317,33 +294,75 @@ Comprar
 
 <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1000">
 
-<h2>PLAN ULTRA</h2>
+<h3>PLAN ULTRA</h3>
 
-<p>DOP 8,000</p>
+<p>
 
-<p>Ganancia diaria 8%</p>
+Acceso VIP exclusivo
 
-<button onclick="comprar('PLAN ULTRA',8000)">
+</p>
+
+<h2>DOP 8,000</h2>
+
+<a href="comprar.html">
+
+<button>
+
 Comprar
+
 </button>
+
+</a>
+
+</div>
+
+<div class="producto">
+
+<img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1000">
+
+<h3>PLAN ELITE</h3>
+
+<p>
+
+Acceso total + soporte
+
+</p>
+
+<h2>DOP 15,000</h2>
+
+<a href="comprar.html">
+
+<button>
+
+Comprar
+
+</button>
+
+</a>
+
+</div>
 
 </div>
 
 </section>
 
-<section class="soporte" id="soporte">
+<section id="contacto">
 
-<h2>
-Soporte WhatsApp
-</h2>
+<h2>Soporte</h2>
 
 <p>
-¿Problemas con depósitos o retiros?
+
+¿Necesitas ayuda?
+
 </p>
 
 <a href="https://wa.me/18298177882">
 
-WhatsApp 829-817-7882
+<button>
+
+WhatsApp Soporte
+
+</button>
 
 </a>
 
@@ -352,39 +371,12 @@ WhatsApp 829-817-7882
 <footer>
 
 <p>
+
 © NOVATECH CLUB
-</p>
 
-<p>
-Retiro mínimo DOP 250
-</p>
-
-<p>
-Comisión retiro 8%
 </p>
 
 </footer>
-
-<script>
-
-function comprar(plan,monto){
-
-localStorage.setItem(
-"planSeleccionado",
-plan
-);
-
-localStorage.setItem(
-"montoSeleccionado",
-monto
-);
-
-window.location.href =
-"comprar.html";
-
-}
-
-</script>
 
 </body>
 

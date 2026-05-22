@@ -10,43 +10,24 @@ content="width=device-width, initial-scale=1.0">
 
 <title>Comprar Plan</title>
 
+<link rel="stylesheet" href="style.css">
+
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-}
+.box{
 
-body{
-background:#f5f5f5;
-padding:20px;
-}
-
-h1{
-text-align:center;
-margin-bottom:20px;
-}
-
-.plan{
 background:white;
 padding:25px;
 border-radius:20px;
-margin-bottom:20px;
+width:90%;
+max-width:500px;
+margin:40px auto;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
+
 }
 
-.plan h2{
-margin-bottom:15px;
-}
-
-.plan p{
-margin-bottom:10px;
-font-size:16px;
-}
-
-input,select{
+.box input,
+.box select{
 
 width:100%;
 padding:14px;
@@ -54,11 +35,11 @@ margin-top:10px;
 margin-bottom:15px;
 border-radius:10px;
 border:1px solid #ccc;
-font-size:15px;
+box-sizing:border-box;
 
 }
 
-button{
+.box button{
 
 width:100%;
 padding:14px;
@@ -68,12 +49,7 @@ color:white;
 font-size:16px;
 border-radius:10px;
 cursor:pointer;
-font-weight:bold;
 
-}
-
-button:hover{
-background:#218838;
 }
 
 </style>
@@ -82,55 +58,57 @@ background:#218838;
 
 <body>
 
-<h1>Comprar Plan</h1>
+<div class="box">
 
-<div class="plan">
+<h1>
 
-<h2>
+Comprar Plan
+
+</h1>
+
+<h3>
+
 Datos de Pago
-</h2>
+
+</h3>
 
 <p>
-<strong>Banco:</strong>
-Banreservas
+Banco: Banreservas
 </p>
 
 <p>
-<strong>Cuenta:</strong>
-9606810364
+Cuenta: 9606810364
 </p>
 
 <p>
-<strong>Titular:</strong>
+Titular:
 Welinson Batista Tejeda
 </p>
 
-</div>
-
-<div class="plan">
-
-<h2>
-Enviar Comprobante
-</h2>
+<hr>
 
 <input
 type="text"
 id="nombre"
-placeholder="Tu nombre completo"
+placeholder="Tu nombre"
 >
 
 <select id="plan">
 
 <option>
-Plan Básico - 1000
+PLAN START - 1000
 </option>
 
 <option>
-Plan Premium - 6000
+PLAN PLUS - 2000
 </option>
 
 <option>
-Plan VIP - 8000
+PLAN ULTRA - 8000
+</option>
+
+<option>
+PLAN ELITE - 15000
 </option>
 
 </select>
@@ -172,7 +150,7 @@ authDomain: "novatech-e0294.firebaseapp.com",
 
 projectId: "novatech-e0294",
 
-storageBucket: "novatech-e0294.firebasestorage.app",
+storageBucket: "novatech-e0294.appspot.com",
 
 messagingSenderId: "1050314267105",
 
@@ -188,6 +166,7 @@ getFirestore(app);
 
 document
 .getElementById("btnEnviar")
+
 .addEventListener("click", async()=>{
 
 const nombre =
@@ -195,14 +174,6 @@ document.getElementById("nombre").value;
 
 const plan =
 document.getElementById("plan").value;
-
-if(nombre==""){
-
-alert("Ingresa tu nombre");
-
-return;
-
-}
 
 try{
 
@@ -213,11 +184,8 @@ collection(db,"depositos"),
 {
 
 nombre:nombre,
-
 plan:plan,
-
 estado:"pendiente",
-
 fecha:Date.now()
 
 }
@@ -225,10 +193,8 @@ fecha:Date.now()
 );
 
 alert(
-"Comprobante enviado correctamente"
+"Comprobante enviado"
 );
-
-document.getElementById("nombre").value="";
 
 }
 catch(error){

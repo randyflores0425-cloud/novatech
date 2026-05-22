@@ -4,56 +4,41 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Panel Usuario</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Panel</title>
+
+<link rel="stylesheet" href="style.css">
 
 <style>
 
-body{
-font-family:Arial;
-background:#f5f5f5;
-padding:20px;
-margin:0;
-}
+.panel{
 
-header{
-background:#000;
-color:white;
 padding:20px;
-border-radius:20px;
-margin-bottom:20px;
-}
 
-.cards{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
 }
 
 .card{
+
 background:white;
 padding:20px;
 border-radius:20px;
+margin-bottom:20px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
-text-align:center;
+
 }
 
 button{
-width:100%;
-padding:14px;
-margin-top:15px;
+
+padding:14px 20px;
 border:none;
-background:#28a745;
+background:red;
 color:white;
-font-size:16px;
 border-radius:10px;
 cursor:pointer;
-}
 
-a{
-text-decoration:none;
 }
 
 </style>
@@ -62,67 +47,55 @@ text-decoration:none;
 
 <body>
 
-<header>
+<div class="panel">
 
-<h1>NOVATECH CLUB</h1>
+<h1>
 
-<p id="nombre">
+Panel Usuario
+
+</h1>
+
+<div class="card">
+
+<h2 id="email">
 
 Cargando...
 
+</h2>
+
+<p>
+Bienvenido a NOVATECH CLUB
 </p>
 
-</header>
-
-<div class="cards">
+</div>
 
 <div class="card">
 
-<h2>Saldo</h2>
+<h3>Plan Actual</h3>
 
-<p id="saldo">
+<p>
+Sin plan activo
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Ganancias</h3>
+
+<p>
 DOP 0
 </p>
 
 </div>
 
-<div class="card">
-
-<h2>Plan</h2>
-
-<p id="plan">
-Sin plan
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>Ganancias</h2>
-
-<p id="ganancias">
-DOP 0
-</p>
-
-</div>
-
-</div>
-
-<a href="comprar.html">
-
-<button>
-
-Comprar Plan
-
-</button>
-
-</a>
-
-<button onclick="cerrarSesion()">
+<button id="logout">
 
 Cerrar Sesión
 
 </button>
+
+</div>
 
 <script type="module">
 
@@ -140,16 +113,6 @@ signOut
 
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-import {
-
-getFirestore,
-doc,
-getDoc
-
-}
-
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
 const firebaseConfig = {
 
 apiKey: "AIzaSyDLfYfeuBHDPNbswPm9oCe-CbNJw0Z4fOk",
@@ -158,7 +121,7 @@ authDomain: "novatech-e0294.firebaseapp.com",
 
 projectId: "novatech-e0294",
 
-storageBucket: "novatech-e0294.firebasestorage.app",
+storageBucket: "novatech-e0294.appspot.com",
 
 messagingSenderId: "1050314267105",
 
@@ -172,46 +135,12 @@ initializeApp(firebaseConfig);
 const auth =
 getAuth(app);
 
-const db =
-getFirestore(app);
-
-onAuthStateChanged(auth,
-async(user)=>{
+onAuthStateChanged(auth,(user)=>{
 
 if(user){
 
-const ref =
-doc(db,"usuarios",user.uid);
-
-const snap =
-await getDoc(ref);
-
-if(snap.exists()){
-
-const datos =
-snap.data();
-
-document.getElementById(
-"nombre"
-).innerHTML =
-datos.nombre;
-
-document.getElementById(
-"saldo"
-).innerHTML =
-"DOP " + datos.saldo;
-
-document.getElementById(
-"plan"
-).innerHTML =
-datos.plan;
-
-document.getElementById(
-"ganancias"
-).innerHTML =
-"DOP " + datos.ganancias;
-
-}
+document.getElementById("email")
+.innerHTML = user.email;
 
 }else{
 
@@ -222,15 +151,16 @@ window.location.href =
 
 });
 
-window.cerrarSesion =
-async function(){
+document.getElementById("logout")
+
+.addEventListener("click", async()=>{
 
 await signOut(auth);
 
 window.location.href =
 "login.html";
 
-}
+});
 
 </script>
 
