@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>NOVATECH - Consola de Control</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .admin-box { padding: 20px; display: flex; flex-direction: column; gap: 15px; }
+        .panel-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 15px; }
+        .admin-input { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); padding: 12px; border-radius: 8px; color: white; width: 100%; font-size: 14px; margin-bottom: 10px; }
+        .admin-btn { background: #00b578; color: #071730; border: none; padding: 12px; border-radius: 8px; font-weight: 700; width: 100%; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="profile-header">
+        <h2 class="brand-title" style="text-align: center;"><i class="fa-solid fa-user-gear"></i> MÓDULO ADMINISTRATIVO</h2>
+        <p style="text-align: center; font-size: 12px; color: #8da2bb; margin-top: 5px;">Gestión interna de balances de inversores</p>
+    </div>
+
+    <div class="admin-box">
+        <div class="panel-card">
+            <h3 style="font-size: 14px; margin-bottom: 10px; color: #00b578;">Buscar Usuario</h3>
+            <input type="email" id="search-email" class="admin-input" placeholder="Correo del cliente">
+            <button class="admin-btn" onclick="buscarUsuario()">Cargar Datos</button>
+        </div>
+
+        <div class="panel-card" id="editor-card" style="display: none;">
+            <h3 id="target-user" style="font-size: 14px; margin-bottom: 12px; color: #ffffff;">Usuario: --</h3>
+            
+            <label style="font-size: 12px; color: #8da2bb;">Saldo Actual (DOP):</label>
+            <input type="number" id="current-balance" class="admin-input">
+
+            <label style="font-size: 12px; color: #8da2bb;">Ingresos Acumulados (DOP):</label>
+            <input type="number" id="current-income" class="admin-input">
+
+            <button class="admin-btn" style="background: #ffffff; color: #071730;" onclick="actualizarFondos()">Guardar Cambios Financieros</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="firebase.js"></script>
+    <script>
+        const db = firebase.firestore();
+
+        function buscarUsuario() {
+            const email = document.getElementById("search-email").value.trim();
+            if(!email) return alert("Ingresa un correo válido.");
+
+            db.collection("usuarios").doc(email).get().then((doc) => {
+                if (doc.exists) {
+                    document.getElementById("target-user").innerText = "Gestionando: " + email;
+                    document.getElementById("current-balance").value = doc.data().saldo || 0;
+                    document.getElementById("current-income").value = doc.data().ingresos || 0;
+                    document.getElementById("editor-card").style.display = "block";
+                } else {
+                    alert("El usuario no está registrado en la base de datos.");
+                }
+            }).catch(err => alert("Error: " + err));
+        }
+
+        function actualizarFondos() {
+            const email = document.getElementById("search-email").value.trim();
+            const nuevoSaldo = parseFloat(document.getElementById("current-balance").value) || 0;
+            const nuevosIngresos = parseFloat(document.getElementById("current-income").value) || 0;
+
+            db.collection("usuarios").doc(email).update({
+                saldo: nuevoSaldo,
+                ingresos: nuevosIngresos
+            }).then(() => {
+                alert("¡Modificación exitosa! Los balances han sido actualizados en la cuenta del cliente.");
+            }).catch(err => alert("Error al guardar: " + err));
+        }
+    </script>
+</body>
+</html>
