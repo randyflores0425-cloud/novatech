@@ -1,0 +1,87 @@
+/* Estilos Específicos para el Menú Clonado y Navegación Inferior */
+.menu-clonado {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    margin: 15px 20px;
+    overflow: hidden;
+    padding-bottom: 70px; /* Evita que la barra inferior tape el menú */
+}
+
+.menu-item-clon {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.menu-item-clon:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.icon-menu {
+    font-size: 18px;
+    color: #8da2bb;
+    width: 30px;
+}
+
+.text-menu {
+    font-size: 14px;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.arrow-menu {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Barra del Menú Inferior Fija */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    background: #030d1c;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: #8da2bb;
+    text-decoration: none;
+    font-size: 11px;
+    width: 20%;
+}
+
+.nav-item.active {
+    color: #ffd700; /* Color dorado para resaltar la pestaña seleccionada */
+}
+
+.nav-center-circle {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #2b394a 0%, #152232 100%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
+    transform: translateY(-12px);
+}
