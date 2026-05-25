@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Novatech - Cuentas de Depósito</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: #030e20; color: #ffffff; padding: 20px; font-size: 14px; }
+        h2 { font-size: 1.3rem; margin-bottom: 20px; color: #e4b363; text-align: center; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .card { background: #0a192f; padding: 18px; border-radius: 12px; border: 1px solid #112240; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .card-title { font-weight: bold; font-size: 1.1rem; color: #00b4d8; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .card p { font-size: 0.9rem; color: #a8b2d1; line-height: 1.6; margin-bottom: 5px; }
+        
+        .account-box { display: flex; align-items: center; justify-content: space-between; background: #030e20; padding: 8px 12px; border-radius: 6px; margin-top: 10px; border: 1px solid rgba(255,255,255,0.05); }
+        .account-number { font-family: 'Courier New', Courier, monospace; font-weight: bold; color: #e4b363; font-size: 1.1rem; letter-spacing: 0.5px; }
+        .btn-copy { background: none; border: none; color: #00b4d8; cursor: pointer; font-size: 1rem; transition: color 0.2s; }
+        .btn-copy:hover { color: #e4b363; }
+
+        .btn-back { background: linear-gradient(90deg, #c59341, #e4b363); color: #3e2723; border: none; width: 100%; padding: 14px; border-radius: 8px; font-weight: bold; font-size: 1rem; cursor: pointer; margin-top: 15px; text-transform: uppercase; box-shadow: 0 4px 10px rgba(197, 147, 65, 0.2); }
+    </style>
+</head>
+<body>
+
+    <h2>Cuentas autorizadas</h2>
+
+    <div class="card">
+        <div class="card-title"><i class="fas fa-university"></i> Banreservas</div>
+        <p><strong>Titular:</strong> Welinson Batista Tejeda</p>
+        <p><strong>Moneda:</strong> DOP (Peso Dominicano)</p>
+        <div class="account-box">
+            <span class="account-number" id="acc-reservas">9606810364</span>
+            <button class="btn-copy" onclick="copyAccount('acc-reservas')"><i class="far fa-copy"></i></button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title"><i class="fas fa-university"></i> Banco Popular</div>
+        <p><strong>Titular:</strong> Franklin Fernández</p>
+        <p><strong>Moneda:</strong> DOP (Peso Dominicano)</p>
+        <div class="account-box">
+            <span class="account-number" id="acc-popular">809480569</span>
+            <button class="btn-copy" onclick="copyAccount('acc-popular')"><i class="far fa-copy"></i></button>
+        </div>
+    </div>
+
+    <button class="btn-back" onclick="location.href='mio.html'">Volver al Perfil</button>
+
+    <script>
+        function copyAccount(id) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Número de cuenta copiado al portapapeles.");
+            });
+        }
+    </script>
+</body>
+</html>

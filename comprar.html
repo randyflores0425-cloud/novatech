@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novatech - Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #030e20; color: #ffffff; padding-bottom: 70px; }
+        
+        .header-banner { background: linear-gradient(rgba(3, 14, 32, 0.7), #030e20), url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000') no-repeat center center/cover; padding: 30px; text-align: center; }
+        
+        .grid-top { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 15px 10px; }
+        .stat-box { background: linear-gradient(135deg, #c59341, #e4b363); padding: 12px; border-radius: 8px; text-align: center; color: #3e2723; font-weight: bold; }
+        .stat-box p { font-size: 0.75rem; opacity: 0.8; }
+
+        /* Tarjeta de Producto */
+        .vip-card { background: #0a192f; margin: 15px 10px; padding: 20px; border-radius: 10px; border: 1px solid #112240; position: relative; }
+        .vip-title { font-size: 1.3rem; font-weight: bold; color: #fff; margin-bottom: 12px; }
+        .vip-content { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .vip-details { width: 65%; }
+        .vip-image { width: 30%; text-align: right; }
+        .vip-image i { font-size: 3.5rem; color: #00b4d8; opacity: 0.8; }
+        
+        .price-row { background: #112240; padding: 8px; border-radius: 5px; font-size: 0.95rem; margin-bottom: 10px; color: #00b4d8; }
+        .metrics-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .metric-cell { background: #030e20; padding: 8px; border-radius: 5px; text-align: center; }
+        .metric-cell span { display: block; font-size: 1.1rem; font-weight: bold; color: #fff; }
+        .metric-cell label { font-size: 0.7rem; color: #8892b0; }
+
+        .btn-buy { background: linear-gradient(90deg, #c59341, #e4b363); color: #3e2723; border: none; width: 100%; padding: 12px; border-radius: 6px; font-weight: bold; font-size: 1rem; cursor: pointer; text-transform: uppercase; margin-top: 10px; }
+        .warning-text { color: #e4b363; font-size: 0.75rem; margin-top: 8px; line-height: 1.4; }
+
+        /* Nav */
+        .nav-bar { position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; background: #0a192f; display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #112240; z-index: 999; }
+        .nav-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #8892b0; font-size: 0.75rem; width: 20%; }
+        .nav-item.active { color: #e4b363; }
+        .nav-item i { font-size: 1.2rem; margin-bottom: 4px; }
+        .nav-center { position: relative; top: -15px; width: 55px; height: 55px; background: #e4b363; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #000; font-size: 1.5rem; font-weight: bold; border: 4px solid #030e20; }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <i class="fas fa-satellite" style="font-size: 3rem; color: #00b4d8; margin-bottom: 10px;"></i>
+    </div>
+
+    <div class="grid-top">
+        <div class="stat-box">
+            <span id="myProductsCount">0</span>
+            <p>Mis productos >></p>
+        </div>
+        <div class="stat-box">
+            <span>DOP 0.00</span>
+            <p>Mis ingresos >></p>
+        </div>
+    </div>
+
+    <div class="vip-card">
+        <div class="vip-title">VIP1</div>
+        <div class="vip-content">
+            <div class="vip-details">
+                <div class="price-row">Precio : DOP 800</div>
+                <div class="metrics-row">
+                    <div class="metric-cell"><span>100</span><label>Ingresos diarios</label></div>
+                    <div class="metric-cell"><span>9,000</span><label>Ingreso total</label></div>
+                </div>
+            </div>
+            <div class="vip-image"><i class="fas fa-hands-holding"></i></div>
+        </div>
+        <button class="btn-buy" onclick="buyProduct('VIP1', 800, 100)">Comprar</button>
+        <div class="warning-text">Tras la compra del producto, el importe se transferirá directamente al saldo de su cuenta en un plazo de 24 horas</div>
+    </div>
+
+    <div class="vip-card">
+        <div class="vip-title">VIP2</div>
+        <div class="vip-content">
+            <div class="vip-details">
+                <div class="price-row">Precio : DOP 1,500</div>
+                <div class="metrics-row">
+                    <div class="metric-cell"><span>200</span><label>Ingresos diarios</label></div>
+                    <div class="metric-cell"><span>18,000</span><label>Ingreso total</label></div>
+                </div>
+            </div>
+            <div class="vip-image"><i class="fas fa-hands-holding"></i></div>
+        </div>
+        <button class="btn-buy" onclick="buyProduct('VIP2', 1500, 200)">Comprar</button>
+        <div class="warning-text">Tras la compra del producto, el importe se transferirá directamente al saldo de su cuenta en un plazo de 24 horas</div>
+    </div>
+
+    <div class="vip-card">
+        <div class="vip-title">VIP3</div>
+        <div class="vip-content">
+            <div class="vip-details">
+                <div class="price-row">Precio : DOP 3,000</div>
+                <div class="metrics-row">
+                    <div class="metric-cell"><span>420</span><label>Ingresos diarios</label></div>
+                    <div class="metric-cell"><span>37,800</span><label>Ingreso total</label></div>
+                </div>
+            </div>
+            <div class="vip-image"><i class="fas fa-hands-holding"></i></div>
+        </div>
+        <button class="btn-buy" onclick="buyProduct('VIP3', 3000, 420)">Comprar</button>
+        <div class="warning-text">Tras la compra del producto, el importe se transferirá directamente al saldo de su cuenta en un plazo de 24 horas</div>
+    </div>
+
+    <div class="vip-card">
+        <div class="vip-title">VIP4</div>
+        <div class="vip-content">
+            <div class="vip-details">
+                <div class="price-row">Precio : DOP 6,000</div>
+                <div class="metrics-row">
+                    <div class="metric-cell"><span>880</span><label>Ingresos diarios</label></div>
+                    <div class="metric-cell"><span>79,200</span><label>Ingreso total</label></div>
+                </div>
+            </div>
+            <div class="vip-image"><i class="fas fa-hands-holding"></i></div>
+        </div>
+        <button class="btn-buy" onclick="buyProduct('VIP4', 6000, 880)">Comprar</button>
+        <div class="warning-text">Tras la compra del producto, el importe se transferirá directamente al saldo de su cuenta en un plazo de 24 horas</div>
+    </div>
+
+    <div class="vip-card">
+        <div class="vip-title">VIP5</div>
+        <div class="vip-content">
+            <div class="vip-details">
+                <div class="price-row">Precio : DOP 12,000</div>
+                <div class="metrics-row">
+                    <div class="metric-cell"><span>1,850</span><label>Ingresos diarios</label></div>
+                    <div class="metric-cell"><span>166,500</span><label>Ingreso total</label></div>
+                </div>
+            </div>
+            <div class="vip-image"><i class="fas fa-hands-holding"></i></div>
+        </div>
+        <button class="btn-buy" onclick="buyProduct('VIP5', 12000, 1850)">Comprar</button>
+        <div class="warning-text">Tras la compra del producto, el importe se transferirá directamente al saldo de su cuenta en un plazo de 24 horas</div>
+    </div>
+
+    <div class="nav-bar">
+        <a href="index.html" class="nav-item"><i class="fas fa-home"></i>Hogar</a>
+        <a href="comprar.html" class="nav-item active"><i class="fas fa-box"></i>Producto</a>
+        <a href="index.html" class="nav-center">V</a>
+        <a href="equipo.html" class="nav-item"><i class="fas fa-users"></i>Equipo</a>
+        <a href="mio.html" class="nav-item"><i class="fas fa-user"></i>Mío</a>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
