@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Novatech - Producto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #030e20; color: #ffffff; padding: 15px 15px 80px 15px; }
+        
+        /* Contenedor de cada Tarjeta VIP idéntico a la captura */
+        .vip-card {
+            background-color: #071731;
+            border-radius: 8px;
+            padding: 20px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #0d2347;
+        }
+        .vip-header {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+        .vip-body-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .vip-details-side {
+            flex: 1;
+        }
+        .price-box {
+            background-color: #0d2246;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        .stats-row-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .stat-sub-box {
+            background-color: #0d2246;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .stat-sub-box .num-val {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+        .stat-sub-box .sub-lbl {
+            font-size: 0.75rem;
+            color: #788db6;
+        }
+        
+        /* Imagen flotante del chip tecnológico del clon */
+        .vip-image-side img {
+            width: 85px;
+            height: 85px;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Botón dorado idéntico con degradado suave */
+        .btn-buy-vip {
+            background: linear-gradient(180deg, #e5b25d, #bf8f3b);
+            color: #ffffff;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-transform: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .vip-notice-text {
+            font-size: 0.8rem;
+            color: #bfa054;
+            margin-top: 12px;
+            line-height: 1.4;
+        }
+
+        /* Sección Sobre Nosotros de la captura */
+        .about-box {
+            margin-top: 25px;
+            padding: 5px;
+        }
+        .about-box h3 {
+            font-size: 1.1rem;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .about-box p {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #a2b4d4;
+            margin-bottom: 15px;
+        }
+        .about-box strong {
+            color: #bfa054;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="vip-card">
+        <div class="vip-header">VIP2</div>
+        <div class="vip-body-layout">
+            <div class="vip-details-side">
+                <div class="price-box">Precio : DOP 1,500</div>
+                <div class="stats-row-grid">
+                    <div class="stat-sub-box">
+                        <div class="num-val">200</div>
+                        <div class="sub-lbl">Ingresos diarios</div>
+                    </div>
+                    <div class="stat-sub-box">
+                        <div class="num-val">18,000</div>
+                        <div class="sub-lbl">Ingreso total</div>
+                    </div>
+                </div>
+            </div>
+            <div class="vip-image-side">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=150" alt="Tech Element">
+            </div>
+        </div>
+        <button class="btn-buy-vip">Comprar</button>
+        <div class="vip-notice-text">Tras la compra del producto, el importe se transferirá directamente al saldo de su cuenta en un plazo de 24 horas</div>
+    </div>
+
+    <div class="vip-card">
+        <div class="vip-header">VIP3</div>
+        <div class="vip-body-layout">
+            <div class="vip-details-side">
+                <div class="price-box">Precio : DOP 3,000</div>
+                <div class="stats-row-grid">
+                    <div class="stat-sub-box">
+                        <div class="num-val">420</div>
+                        <div class="sub-lbl">Ingresos diarios</div>
+                    </div>
+                    <div class="stat-sub-box">
+                        <div class="num-val">37,800</div>
+                        <div class="sub-lbl">Ingreso total</div>
+                    </div>
+                </div>
+            </div>
+            <div class="vip-image-side">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=150" alt="Tech Element">
+            </div>
+        </div>
+        <button class="btn-buy-vip">Comprar</button>
+        <div class="vip-notice-text">Tras la compra del producto, el importe se transferirá directamente al saldo de su cuenta en un plazo de 24 horas</div>
+    </div>
+
+    <div class="vip-card">
+        <div class="vip-header">VIP4</div>
+        <div class="vip-body-layout">
+            <div class="vip-details-side">
+                <div class="price-box">Precio : DOP 6,000</div>
+                <div class="stats-row-grid">
+                    <div class="stat-sub-box">
+                        <div class="num-val">880</div>
+                        <div class="sub-lbl">Ingresos diarios</div>
+                    </div>
+                    <div class="stat-sub-box">
+                        <div class="num-val">79,200</div>
+                        <div class="sub-lbl">Ingreso total</div>
+                    </div>
+                </div>
+            </div>
+            <div class="vip-image-side">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=150" alt="Tech Element">
+            </div>
+        </div>
+        <button class="btn-buy-vip">Comprar</button>
+        <div class="vip-notice-text">Tras la compra del producto, el importe se transferirá directamente al saldo de su cuenta en un plazo de 24 horas</div>
+    </div>
+
+    <div class="vip-card">
+        <div class="vip-header">VIP5</div>
+        <div class="vip-body-layout">
+            <div class="vip-details-side">
+                <div class="price-box">Precio : DOP 12,000</div>
+                <div class="stats-row-grid">
+                    <div class="stat-sub-box">
+                        <div class="num-val">1,850</div>
+                        <div class="sub-lbl">Ingresos diarios</div>
+                    </div>
+                    <div class="stat-sub-box">
+                        <div class="num-val">166,500</div>
+                        <div class="sub-lbl">Ingreso total</div>
+                    </div>
+                </div>
+            </div>
+            <div class="vip-image-side">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=150" alt="Tech Element">
+            </div>
+        </div>
+        <button class="btn-buy-vip">Comprar</button>
+        <div class="vip-notice-text">Tras la compra del producto, el importe se transferirá directamente al saldo de su cuenta en un plazo de 24 horas</div>
+    </div>
+
+    <div class="about-box">
+        <h3>Sobre nosotros</h3>
+        <p><strong>Novatech</strong> es una red de servidores e infraestructura en la nube que opera en todo el planeta. Debido a que las estaciones de procesamiento <strong>Novatech</strong> se encuentran distribuidas estratégicamente, la latencia en la gestión de datos es significativamente menor en comparación con sistemas tradicionales.</p>
+        <p>El servicio de alta velocidad y estabilidad de nuestra plataforma es posible gracias a la mayor red de servidores avanzados interconectados.</p>
+        <p><strong>MAYOR CONFIABILIDAD PARA USUARIOS CON ALTA DEMANDA</strong></p>
+        <p>Gracias a sistemas de procesamiento con mayor rendimiento, garantizamos una distribución óptima del ecosistema digital para que sus operaciones críticas corran las 24 horas del día, los 7 días de la semana.</p>
+    </div>
+
+    <nav class="nav-bottom">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Hogar</span>
+        </a>
+        <a href="comprar.html" class="nav-item active">
+            <i class="fas fa-th-large"></i>
+            <span>Producto</span>
+        </a>
+        <a href="comprar.html" class="nav-center-btn">
+            <i class="fas fa-v"></i>
+        </a>
+        <a href="equipo.html" class="nav-item">
+            <i class="fas fa-users"></i>
+            <span>Equipo</span>
+        </a>
+        <a href="mio.html" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Mío</span>
+        </a>
+    </nav>
+
+</body>
+</html>
