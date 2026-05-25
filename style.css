@@ -1,0 +1,232 @@
+/* style.css - Diseño Global Novatech (Actualizado para WhatsApp) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #030e20;
+    color: #ffffff;
+    padding-bottom: 70px; /* Espacio para el menú inferior */
+}
+
+/* Modal de Notificación de Bienvenida */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: linear-gradient(180deg, #0d47a1, #0a192f);
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #1565c0;
+}
+
+.modal-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.modal-body {
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.modal-body ol {
+    padding-left: 15px;
+    margin-top: 10px;
+}
+
+/* Botón Destacado de WhatsApp en la Ventana Emergente */
+.btn-whatsapp-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #25D366; /* Verde oficial de WhatsApp */
+    color: #ffffff;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.btn-whatsapp-modal:hover {
+    background: #20ba5a;
+}
+
+.btn-agree {
+    background: linear-gradient(90deg, #c59341, #e4b363);
+    color: #3e2723;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* Cabecera Principal */
+.header-banner {
+    background: linear-gradient(rgba(3, 14, 32, 0.5), #030e20), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600') center/cover;
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+.header-banner h1 {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.header-banner p {
+    font-size: 0.8rem;
+    color: #00b4d8;
+    margin-top: 5px;
+}
+
+/* Accesos Rápidos (Recargar / Soporte) */
+.quick-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.action-icon {
+    background: rgba(255,255,255,0.05);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #e4b363;
+    margin-bottom: 8px;
+}
+
+/* Sección de Marquesina */
+.marquee-container {
+    background: #0a192f;
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    color: #a8b2d1;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid #112240;
+    border-bottom: 1px solid #112240;
+}
+
+/* Tarjetas de Saldo */
+.balance-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 15px;
+}
+
+.balance-card {
+    background: linear-gradient(135deg, #c59341, #e4b363);
+    padding: 15px;
+    border-radius: 10px;
+    color: #3e2723;
+}
+
+.balance-card.secondary {
+    background: #0a192f;
+    color: #ffffff;
+    border: 1px solid #112240;
+}
+
+.balance-label { font-size: 0.8rem; opacity: 0.8; }
+.balance-value { font-size: 1.2rem; font-weight: bold; margin-top: 5px; }
+
+/* Banner de Innovación */
+.promo-banner {
+    margin: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.promo-banner img {
+    width: 100%;
+    display: block;
+}
+
+/* Barra de Navegación Inferior Fixed */
+.nav-bottom {
+    position: fixed;
+    bottom: 0; left: 0; width: 100%;
+    background: #0a192f;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid #112240;
+    z-index: 900;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #8892b0;
+    text-decoration: none;
+    font-size: 0.75rem;
+    gap: 4px;
+}
+
+.nav-item.active {
+    color: #e4b363;
+}
+
+.nav-item i {
+    font-size: 1.2rem;
+}
+
+/* Botón Flotante Central (V) */
+.nav-center-btn {
+    background: #0a192f;
+    border: 4px solid #030e20;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    margin-top: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e4b363;
+    font-size: 1.6rem;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
+}
