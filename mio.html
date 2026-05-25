@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVATECH - Mi Perfil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <main class="content-area" style="padding-bottom: 80px;">
+        <section class="profile-summary-card">
+            <div class="profile-main">
+                <div class="avatar-box">
+                    <i class="fa-solid fa-user-gear"></i>
+                </div>
+                <div class="user-info">
+                    <p class="phone-num" id="user-phone-display">+1 829-817-7882</p>
+                    <span class="user-vip-badge">VIP 0</span>
+                </div>
+            </div>
+            
+            <div class="balance-grid">
+                <div class="balance-subcard">
+                    <span class="lbl">Saldo de la cuenta</span>
+                    <span class="amt" id="account-balance-val">DOP 200.00</span>
+                </div>
+                <div class="balance-subcard">
+                    <span class="lbl">Ingresos acumulados</span>
+                    <span class="amt" id="accumulated-earnings-val">DOP 0.00</span>
+                </div>
+            </div>
+
+            <div class="profile-actions-row">
+                <a href="cuentas.html" class="p-btn recharge-btn"><i class="fa-solid fa-circle-dollar-to-slot"></i> Recargar</a>
+                <button class="p-btn withdraw-btn" onclick="alert('Monto mínimo de retiro: 200 DOP')"><i class="fa-solid fa-money-bill-transfer"></i> Retirar dinero</button>
+            </div>
+        </section>
+
+        <section class="menu-list-options">
+            <a href="#" class="menu-opt-item" onclick="alert('Abriendo sorteo de bienvenida...')">
+                <div class="opt-left"><i class="fa-solid fa-circle-play icon-color1"></i> <span>Sorteo de la suerte</span></div>
+                <i class="fa-solid fa-chevron-right arrow-right"></i>
+            </a>
+            <a href="index.html" class="menu-opt-item">
+                <div class="opt-left"><i class="fa-solid fa-circle-info icon-color2"></i> <span>Reglas de la plataforma</span></div>
+                <i class="fa-solid fa-chevron-right arrow-right"></i>
+            </a>
+            <a href="https://chat.whatsapp.com/IfgCgvipDkhK9lkXoq99wW" target="_blank" class="menu-opt-item">
+                <div class="opt-left"><i class="fa-solid fa-headset icon-color3"></i> <span>Servicio al cliente</span></div>
+                <i class="fa-solid fa-chevron-right arrow-right"></i>
+            </a>
+            <a href="#" class="menu-opt-item" onclick="alert('No hay más datos históricos registrados.')">
+                <div class="opt-left"><i class="fa-solid fa-clock-rotate-left icon-color4"></i> <span>Historial de la cuenta</span></div>
+                <i class="fa-solid fa-chevron-right arrow-right"></i>
+            </a>
+            <a href="cuentas.html" class="menu-opt-item">
+                <div class="opt-left"><i class="fa-solid fa-credit-card icon-color5"></i> <span>Gestión de retiros bancarios</span></div>
+                <i class="fa-solid fa-chevron-right arrow-right"></i>
+            </a>
+            <a href="#" class="menu-opt-item" style="margin-top: 15px;" onclick="alert('Sesión finalizada.')">
+                <div class="opt-left"><i class="fa-solid fa-power-off icon-color-out"></i> <span>Finalizar la sesión</span></div>
+                <i class="fa-solid fa-chevron-right arrow-right"></i>
+            </a>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Hogar</span>
+        </a>
+        <a href="comprar.html" class="nav-item">
+            <i class="fa-solid fa-box-archive"></i>
+            <span>Producto</span>
+        </a>
+        <a href="https://chat.whatsapp.com/IfgCgvipDkhK9lkXoq99wW" target="_blank" class="nav-item center-btn-wrap">
+            <div class="nav-center-btn">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <span class="center-label">Soporte</span>
+        </a>
+        <a href="equipo.html" class="nav-item">
+            <i class="fa-solid fa-users"></i>
+            <span>Equipo</span>
+        </a>
+        <a href="mio.html" class="nav-item active">
+            <i class="fa-solid fa-user"></i>
+            <span>Mío</span>
+        </a>
+    </nav>
+</body>
+</html>
