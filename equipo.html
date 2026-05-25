@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Novatech - Mi Equipo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para la sección de Equipo */
+        .team-container { padding: 15px; }
+        .page-title { text-align: center; margin-bottom: 20px; font-size: 1.2rem; color: #e4b363; text-transform: uppercase; font-weight: bold; }
+        
+        .invite-box { background: #0a192f; border: 1px solid #112240; border-radius: 12px; padding: 15px; margin-bottom: 15px; }
+        .invite-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; background: rgba(255,255,255,0.03); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
+        .invite-label { font-size: 0.85rem; color: #a8b2d1; display: flex; align-items: center; gap: 8px; }
+        .invite-value { font-weight: bold; color: #ffffff; font-size: 0.9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 180px; }
+        
+        .btn-copy-invite { background: linear-gradient(90deg, #c59341, #e4b363); color: #3e2723; border: none; padding: 6px 14px; border-radius: 6px; font-weight: bold; font-size: 0.8rem; cursor: pointer; transition: opacity 0.2s; }
+        .btn-copy-invite:hover { opacity: 0.9; }
+
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 15px; }
+        .stat-card { background: #0a192f; border: 1px solid #112240; border-radius: 10px; padding: 12px; text-align: center; }
+        .stat-card p { font-size: 0.75rem; color: #a8b2d1; margin-top: 4px; }
+        .stat-card .value { font-size: 1.1rem; font-weight: bold; color: #e4b363; }
+
+        .level-list { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
+        .level-card { background: #0a192f; border: 1px solid #112240; border-radius: 10px; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .level-info h4 { color: #00b4d8; font-size: 1rem; margin-bottom: 4px; }
+        .level-info span { font-size: 0.75rem; color: #a8b2d1; }
+        .level-stats { text-align: right; font-size: 0.8rem; color: #ffffff; line-height: 1.4; }
+
+        .rewards-info { background: rgba(228, 179, 99, 0.05); border: 1px dashed #e4b363; border-radius: 10px; padding: 15px; margin-top: 20px; font-size: 0.8rem; line-height: 1.5; color: #a8b2d1; }
+        .rewards-info h3 { color: #e4b363; font-size: 0.9rem; margin-bottom: 8px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <div class="team-container">
+        <div class="page-title">Equipo</div>
+
+        <div class="invite-box">
+            <div class="invite-row">
+                <div class="invite-label"><i class="fas fa-qrcode"></i> Código</div>
+                <span class="invite-value" id="myCode">RWU5AK</span>
+                <button class="btn-copy-invite" onclick="copyText('myCode', '¡Código copiado!')">Copiar</button>
+            </div>
+            <div class="invite-row">
+                <div class="invite-label"><i class="fas fa-link"></i> Enlace</div>
+                <span class="invite-value" id="myLink">Cargando...</span>
+                <button class="btn-copy-invite" onclick="copyText('myLink', '¡Enlace de invitación copiado!')">Copiar</button>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="value">0</div>
+                <p>Tamaño del equipo</p>
+            </div>
+            <div class="stat-card">
+                <div class="value">DOP 0.00</div>
+                <p>Ingresos totales del equipo</p>
+            </div>
+        </div>
+
+        <div class="level-list">
+            <div class="level-card">
+                <div class="level-info">
+                    <h4>LV 1</h4>
+                    <span>Tasa de comisión: <strong>25%</strong></span>
+                </div>
+                <div class="level-stats">
+                    0 Usuarios válidos<br>
+                    <span style="color: #a8b2d1;">Ingreso: DOP 0.00</span>
+                </div>
+            </div>
+            <div class="level-card">
+                <div class="level-info">
+                    <h4>LV 2</h4>
+                    <span>Tasa de comisión: <strong>3%</strong></span>
+                </div>
+                <div class="level-stats">
+                    0 Usuarios válidos<br>
+                    <span style="color: #a8b2d1;">Ingreso: DOP 0.00</span>
+                </div>
+            </div>
+            <div class="level-card">
+                <div class="level-info">
+                    <h4>LV 3</h4>
+                    <span>Tasa de comisión: <strong>1%</strong></span>
+                </div>
+                <div class="level-stats">
+                    0 Usuarios válidos<br>
+                    <span style="color: #a8b2d1;">Ingreso: DOP 0.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="rewards-info">
+            <h3>Recompensa por invitación</h3>
+            <p>Cuando tus amigos invitados se registren e inviertan, recibirás recompensas en efectivo basadas en tu red:</p>
+            <p style="margin-top: 5px;">• Miembros de **Nivel 1**: obtienes el **25%** de su inversión.</p>
+            <p>• Miembros de **Nivel 2**: obtienes el **3%** de su inversión.</p>
+            <p>• Miembros de **Nivel 3**: obtienes el **1%** de su inversión.</p>
+            <p style="margin-top: 8px; color: #e4b363;">* Recibirás la comisión de forma inmediata tras completarse la primera inversión de tu red descendente.</p>
+        </div>
+    </div>
+
+    <nav class="nav-bottom">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Hogar</span>
+        </a>
+        <a href="comprar.html" class="nav-item">
+            <i class="fas fa-th-large"></i>
+            <span>Producto</span>
+        </a>
+        <a href="comprar.html" class="nav-center-btn">
+            <i class="fas fa-v"></i>
+        </a>
+        <a href="equipo.html" class="nav-item active">
+            <i class="fas fa-users"></i>
+            <span>Equipo</span>
+        </a>
+        <a href="mio.html" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Mío</span>
+        </a>
+    </nav>
+
+    <script>
+        // Lógica automática para generar el enlace dinámico de referidos
+        document.addEventListener("DOMContentLoaded", () => {
+            const code = document.getElementById("myCode").innerText;
+            // Toma la URL actual (ej: novatech-lime.vercel.app) y le añade la ruta de registro
+            const currentOrigin = window.location.origin; 
+            const referralLink = `${currentOrigin}/registro.html?ref=${code}`;
+            
+            // Inyectar el link en la interfaz
+            document.getElementById("myLink").innerText = referralLink;
+        });
+
+        // Función universal para copiar al portapapeles
+        function copyText(elementId, successMessage) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert(successMessage);
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
