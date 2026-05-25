@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Novatech - Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product-container { padding: 15px; }
+        .product-header-img { width: 100%; border-radius: 12px; margin-bottom: 15px; display: block; }
+        .product-card { background: #0a192f; border: 1px solid #112240; border-radius: 12px; padding: 15px; margin-bottom: 15px; }
+        .product-title { font-size: 1.2rem; font-weight: bold; color: #e4b363; margin-bottom: 12px; }
+        .product-info-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; margin-bottom: 12px; }
+        .info-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; }
+        .info-row:last-child { margin-bottom: 0; }
+        .info-label { color: #a8b2d1; }
+        .info-value { font-weight: bold; color: #ffffff; }
+        .product-footer-text { font-size: 0.75rem; color: #e4b363; opacity: 0.8; margin-top: 8px; line-height: 1.3; }
+        
+        /* Sección Informativa Inferior */
+        .about-section { background: #0a192f; border: 1px solid #112240; border-radius: 12px; padding: 15px; margin-top: 20px; }
+        .about-section h3 { color: #e4b363; font-size: 1.1rem; margin-bottom: 10px; text-transform: uppercase; }
+        .about-section p { font-size: 0.85rem; color: #a8b2d1; line-height: 1.5; margin-bottom: 12px; }
+        .about-section h4 { color: #00b4d8; font-size: 0.95rem; margin-top: 15px; margin-bottom: 5px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <div class="product-container">
+        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600" class="product-header-img" alt="Novatech Infrastructure">
+
+        <div class="balance-container" style="padding: 0; margin-bottom: 20px;">
+            <div class="balance-card">
+                <div class="balance-label">Mis productos</div>
+                <div class="balance-value">0</div>
+            </div>
+            <div class="balance-card secondary">
+                <div class="balance-label">Mis ingresos</div>
+                <div class="balance-value">DOP 0.00</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-title">NIVEL TECNOLÓGICO VIP1</div>
+            <div class="product-info-box">
+                <div class="info-row"><span class="info-label">Precio</span><span class="info-value" style="color: #e4b363;">DOP 800</span></div>
+                <div class="info-row"><span class="info-label">Ingresos diarios</span><span class="info-value">DOP 100</span></div>
+                <div class="info-row"><span class="info-label">Ingreso total</span><span class="info-value">DOP 9,000</span></div>
+            </div>
+            <button class="btn-agree">Comprar</button>
+            <p class="product-footer-text">* Tras la compra del producto, el importe se transferirá directamente al saldo de su cuenta en un plazo de 24 horas.</p>
+        </div>
+
+        <div class="product-card">
+            <div class="product-title">NIVEL TECNOLÓGICO VIP2</div>
+            <div class="product-info-box">
+                <div class="info-row"><span class="info-label">Precio</span><span class="info-value" style="color: #e4b363;">DOP 1,500</span></div>
+                <div class="info-row"><span class="info-label">Ingresos diarios</span><span class="info-value">DOP 200</span></div>
+                <div class="info-row"><span class="info-label">Ingreso total</span><span class="info-value">DOP 18,000</span></div>
+            </div>
+            <button class="btn-agree">Comprar</button>
+            <p class="product-footer-text">* Tras la compra del producto, el importe se transferirá directamente al saldo de su cuenta en un plazo de 24 horas.</p>
+        </div>
+
+        <div class="product-card">
+            <div class="product-title">NIVEL TECNOLÓGICO VIP3</div>
+            <div class="product-info-box">
+                <div class="info-row"><span class="info-label">Precio</span><span class="info-value" style="color: #e4b363;">DOP 3,000</span></div>
+                <div class="info-row"><span class="info-label">Ingresos diarios</span><span class="info-value">DOP 420</span></div>
+                <div class="info-row"><span class="info-label">Ingreso total</span><span class="info-value">DOP 37,800</span></div>
+            </div>
+            <button class="btn-agree">Comprar</button>
+            <p class="product-footer-text">* Tras la compra del producto, el importe se transferirá directamente al saldo de su cuenta en un plazo de 24 horas.</p>
+        </div>
+
+        <div class="product-card">
+            <div class="product-title">NIVEL TECNOLÓGICO VIP4</div>
+            <div class="product-info-box">
+                <div class="info-row"><span class="info-label">Precio</span><span class="info-value" style="color: #e4b363;">DOP 6,000</span></div>
+                <div class="info-row"><span class="info-label">Ingresos diarios</span><span class="info-value">DOP 880</span></div>
+                <div class="info-row"><span class="info-label">Ingreso total</span><span class="info-value">DOP 79,200</span></div>
+            </div>
+            <button class="btn-agree">Comprar</button>
+            <p class="product-footer-text">* Tras la compra del producto, el importe se transferirá directamente al saldo de su cuenta en un plazo de 24 horas.</p>
+        </div>
+
+        <div class="product-card">
+            <div class="product-title">NIVEL TECNOLÓGICO VIP5</div>
+            <div class="product-info-box">
+                <div class="info-row"><span class="info-label">Precio</span><span class="info-value" style="color: #e4b363;">DOP 12,000</span></div>
+                <div class="info-row"><span class="info-label">Ingresos diarios</span><span class="info-value">DOP 1,850</span></div>
+                <div class="info-row"><span class="info-label">Ingreso total</span><span class="info-value">DOP 166,500</span></div>
+            </div>
+            <button class="btn-agree">Comprar</button>
+            <p class="product-footer-text">* Tras la compra del producto, el importe se transferirá directamente al saldo de su cuenta en un plazo de 24 horas.</p>
+        </div>
+
+        <div class="about-section">
+            <h3>Sobre Nosotros</h3>
+            <p>NOVATECH es un ecosistema global dedicado al desarrollo de infraestructura digital de alto rendimiento y servidores en la nube. Mediante arquitecturas optimizadas de procesamiento, reducimos la latencia global y permitimos a nuestros partners maximizar el rendimiento operativo las 24 horas del día, los 7 días de la semana.</p>
+            
+            <h4>Soporte e Infraestructura Dedicada</h4>
+            <p>Nuestras estaciones de datos cuentan con redundancia automatizada y un ancho de banda escalable, garantizando seguridad bancaria y distribución de comisiones en tiempo real para todos los miembros de la red.</p>
+        </div>
+    </div>
+
+    <nav class="nav-bottom">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Hogar</span>
+        </a>
+        <a href="comprar.html" class="nav-item active">
+            <i class="fas fa-th-large"></i>
+            <span>Producto</span>
+        </a>
+        <a href="comprar.html" class="nav-center-btn">
+            <i class="fas fa-v"></i>
+        </a>
+        <a href="equipo.html" class="nav-item">
+            <i class="fas fa-users"></i>
+            <span>Equipo</span>
+        </a>
+        <a href="mio.html" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Mío</span>
+        </a>
+    </nav>
+
+</body>
+</html>
