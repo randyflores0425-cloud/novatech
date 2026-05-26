@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es" style="min-height: 100%; width: 100%;">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,user-scalable=0,initial-scale=1,maximum-scale=1, minimum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Novatech - Hogar</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            width: 100%;
+            background: linear-gradient(to top, #071730, #071730);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+        }
+        .small-font { font-size: 12px; -webkit-transform-origin-x: 0; -webkit-transform: scale(0.80); }
+        .smallsize-font { font-size: 9.6px; }
+        .tblue { background: #1476ff !important; }
+        .tgreen { background: #4caf50 !important; }
+        .tred { background: #f44336 !important; }
+        .tzs { background: #6739b6 !important; }
+        
+        /* Contenedores Principales de tu Clon */
+        .app-header { background-color: #0d1b2e; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #162942; }
+        .content-area { padding: 15px; padding-bottom: 90px; }
+        
+        .quick-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
+        .stat-card { background-color: #0d1b2e; border-radius: 8px; padding: 12px 8px; text-align: center; border: 1px solid #162942; }
+        .stat-title { display: block; font-size: 0.75rem; color: #8a99ad; margin-bottom: 5px; }
+        .stat-value { font-size: 0.95rem; font-weight: bold; color: #00ffcc; }
+
+        /* Cuadrícula de Botones de Acción */
+        .action-buttons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .action-btn { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 18px; border-radius: 10px; text-decoration: none; font-weight: 600; color: #fff; }
+        .action-btn.deposit { background-color: rgba(0, 102, 255, 0.15); border: 1px solid #0066ff; }
+        .action-btn.invest { background: rgba(212, 175, 55, 0.1); border: 1px solid #aa7c11; }
+        
+        /* Menú Inferior Fijo */
+        .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; height: 65px; background-color: #0d1b2e; border-top: 1px solid #162942; display: flex; justify-content: space-around; align-items: center; z-index: 999; }
+        .nav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; color: #8a99ad; text-decoration: none; font-size: 0.75rem; width: 25%; height: 100%; gap: 4px; }
+        .nav-item.active { color: #0066ff; }
+
+        /* Botón Soporte Flotante WhatsApp Reemplazando Telegram */
+        .center-btn-wrap { position: relative; height: 100%; display: flex; align-items: center; justify-content: center; width: 20%; }
+        .nav-center-btn { width: 50px; height: 50px; background-color: #25d366; color: #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.6rem; position: absolute; top: -15px; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4); border: 3px solid #0d1b2e; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-satellite-dish" style="color: #0066ff; font-size: 1.3rem;"></i>
+            <h1 style="margin: 0; font-size: 1.2rem; letter-spacing: 1px;">NOVATECH</h1>
+        </div>
+        <span style="background-color: rgba(0, 255, 204, 0.1); color: #00ffcc; padding: 5px 10px; border-radius: 20px; font-size: 0.8rem;">En Línea</span>
+    </header>
+
+    <div class="content-area">
+        <div class="quick-stats">
+            <div class="stat-card">
+                <span class="stat-title">Mi Balance</span>
+                <span class="stat-value" id="amount">DOP 0.00</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-title">Ingreso Diario</span>
+                <span class="stat-value" id="day_income">DOP 0.00</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-title">Ganancia Total</span>
+                <span class="stat-value" id="all_income">DOP 0.00</span>
+            </div>
+        </div>
+
+        <div class="action-buttons-grid">
+            <a href="depositos.html" class="action-btn deposit">
+                <i class="fas fa-wallet"></i>
+                <span>Depositar</span>
+            </a>
+            <a href="comprar.html" class="action-btn invest">
+                <i class="fas fa-chart-line"></i>
+                <span>Invertir</span>
+            </a>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item active"><i class="fas fa-home"></i><span>Hogar</span></a>
+        <a href="comprar.html" class="nav-item"><i class="fas fa-shopping-cart"></i><span>Invertir</span></a>
+        
+        <div class="center-btn-wrap">
+            <a href="https://chat.whatsapp.com/IfgCgvipDkhK9lkXoq99wW" target="_blank" class="nav-center-btn">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        
+        <a href="depositos.html" class="nav-item"><i class="fas fa-university"></i><span>Depósito</span></a>
+        <a href="mio.html" class="nav-item"><i class="fas fa-user"></i><span>Mío</span></a>
+    </nav>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es" style="min-height: 100%; width: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novatech - Cuentas Autorizadas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { 
+            margin: 0; 
+            background-color: #071222; 
+            color: #f5f7fa; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .app-header { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            padding: 15px 5px; 
+            margin-bottom: 15px; 
+        }
+        .back-btn { 
+            color: #8a99ad; 
+            text-decoration: none; 
+            font-size: 1.1rem; 
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .header-title {
+            margin: 0; 
+            font-size: 1.3rem; 
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        .instruction-text {
+            color: #8a99ad;
+            font-size: 0.9rem;
+            text-align: center;
+            line-height: 1.4;
+            margin-bottom: 25px;
+            padding: 0 10px;
+        }
+        .bank-card { 
+            background-color: #0d1b30; 
+            border-radius: 14px; 
+            padding: 22px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .bank-card-header { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            margin-bottom: 18px; 
+        }
+        .bank-icon {
+            color: #1476ff;
+            font-size: 1.5rem;
+        }
+        .bank-title { 
+            font-size: 1.4rem; 
+            font-weight: bold; 
+            color: #fff; 
+            margin: 0; 
+        }
+        .info-group {
+            margin-bottom: 14px;
+        }
+        .info-label { 
+            color: #566981; font-size: 0.85rem; display: block; margin-bottom: 2px;
+        }
+        .info-value { 
+            font-weight: 500; color: #fff; font-size: 1.05rem;
+        }
+        .account-number-box { 
+            background-color: #071222; 
+            padding: 14px 16px; 
+            border-radius: 8px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-top: 18px; 
+        }
+        .account-number {
+            font-size: 1.4rem; 
+            font-weight: bold; 
+            color: #d4af37; 
+            letter-spacing: 0.5px;
+        }
+        .copy-btn { 
+            background: none; 
+            border: none; 
+            color: #8a99ad; 
+            cursor: pointer; 
+            font-size: 1.2rem; 
+            padding: 5px;
+            transition: color 0.2s; 
+        }
+        .copy-btn:hover { 
+            color: #fff; 
+        }
+        .action-container {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .btn-profile {
+            background-color: #d4af37;
+            color: #071222;
+            border: none;
+            border-radius: 25px;
+            padding: 14px 40px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            width: 85%;
+            max-width: 320px;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-chevron-left"></i> Volver
+        </a>
+        <h2 class="header-title">Cuentas Autorizadas</h2>
+    </header>
+
+    <div class="instruction-text">
+        Realice sus depósitos únicamente a las cuentas oficiales mostradas a continuación para recargar su saldo de NOVATECH:
+    </div>
+
+    <div class="bank-card">
+        <div class="bank-card-header">
+            <i class="fas fa-university bank-icon"></i>
+            <h3 class="bank-title">Banreservas</h3>
+        </div>
+        <div class="info-group">
+            <span class="info-label">Titular:</span>
+            <span class="info-value">Welinson Batista Tejeda</span>
+        </div>
+        <div class="info-group">
+            <span class="info-label">Moneda:</span>
+            <span class="info-value">DOP (Peso Dominicano)</span>
+        </div>
+        
+        <div class="account-number-box">
+            <span class="account-number" id="card-num-reservas">9606810364</span>
+            <button class="copy-btn" onclick="copiarTexto('card-num-reservas')">
+                <i class="far fa-copy"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="bank-card">
+        <div class="bank-card-header">
+            <i class="fas fa-university bank-icon"></i>
+            <h3 class="bank-title">Banco Popular</h3>
+        </div>
+        <div class="info-group">
+            <span class="info-label">Titular:</span>
+            <span class="info-value">Franklin Fernández</span>
+        </div>
+        <div class="info-group">
+            <span class="info-label">Moneda:</span>
+            <span class="info-value">DOP (Peso Dominicano)</span>
+        </div>
+        
+        <div class="account-number-box">
+            <span class="account-number" id="card-num-popular">809480569</span>
+            <button class="copy-btn" onclick="copiarTexto('card-num-popular')">
+                <i class="far fa-copy"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="action-container">
+        <a href="index.html" class="btn-profile">Volver al Perfil</a>
+    </div>
+
+    <script>
+        function copiarTexto(elementId) {
+            var num = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(num).then(function() {
+                alert("Número copiado correctamente: " + num);
+            }, function() {
+                // Alternativa por si el navegador bloquea el clipboard directo
+                var exp = document.createElement("input");
+                exp.value = num;
+                document.body.appendChild(exp);
+                exp.select();
+                document.execCommand("copy");
+                document.body.removeChild(exp);
+                alert("Número copiado: " + num);
+            });
+        }
+    </script>
+</body>
+</html>
